@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{lineno}
+\usepackage{cite}
+\usepackage{amssymb,graphics,color,cite,amsmath}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{hyperref}
+\usepackage{verbatim}
+
+\usepackage[noblocks]{authblk}
+%\usepackage{natbib}
+\usepackage{stackengine}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\renewcommand{\(}{\left (}
+\renewcommand{\)}{\right )}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+
+\begin{document}
+
+\title{Synchronization of Two Cellular Circadian Rhythms}
+\date{}
+\author[1]{Yuliang Shi}
+\author[2]{Zeshun Zong}
+\affil[1,2]{\footnotesize Courant Institute of Mathematical Sciences, New York University, New York}
+
+
+\maketitle
+\begin{abstract}
+ABSTRACT
+\end{abstract}
+
+\section{Introduction}
+
+\hspace{5mm} Almost all animals have innate biological clock that controls various timing inside the body. Negative feedback of gene expression is one typical generator for a mammalian circadian clock. One simple model of the circadian rhythm is to consider the clock gene expression in a particular cell. This has been shown in Wang and Peskin's work. Building upon their work, we investigate the coupling of two cells with different periods, and study the possible interactions among them.
+
+The model for one cellular circadian oscillator consists of the following: the mRNA and the corresponding proteins encoded by the gene. First, mRNA molecules are synthesized through transription and enter the cytoplasm. Then, protein molecules are generated in the cytoplasm through translation. Some protein molecules will enter the nucleus and bind to some activating transription factor on the DNA, thus inhibiting the transcription. This provides a negative feedback that can lean to oscillations in the amount of substances in the cell, provided the parameters are well-chosen.
+
+In this paper we build two such cellular circadian oscillators with different periods. To simulate the information exchange between the two cells, we take a simplified approach that allows protein molecules to directly flow between two cells through diffusion. Both deterministic version and stochastic version of the model are utilized to compare the results.
+
+In the rest of the paper, we first use the deterministic version to find suitable parameters that will generate two oscillations with different periods. Next, we use the deterministic model to study the case when two cells are coupled. Finally, the stochastic version of the model is investigated. Comparisions and analysis are also stated at the end.
+
+\section{Mathematical Modeling}
+\subsection{Basic Model}
+
+\hspace{5mm} Following
+\begin{thebibliography}{9}
+
+	\bibitem{gyrocom}
+	Charles S. Peskin. (2018).
+	Notes on gyrocompass.
+
+	\bibitem{rbm}
+	Charles Puelz. (2018).
+	Matlab code about rigid body motion.
+
+
+
+
+\end{thebibliography}
+
+\end{document}
