@@ -142,6 +142,111 @@ So $T$ follows an exponential distribution with parameter $r.$  Since $T$ is con
 
 In the stochastic approach, given initial amount of each substances, six reaction times (each follows an exponential distribution with the parameter being the reaction's probability per unit time, respectively) are generated. We assume only the first reaction actually happens. Then the numbers of molecules are adjusted correspondingly and the above process is repeated.
 
+\subsection{Stability Analysis and Choice of Parameters}
+\hspace{5mm} In order to judiciously choose parameters so that the system defined by equations (5)-(8) can sustain a periodic oscillation, we perform a stability analysis of the system. The steady state is defined to be the case when the amount of each substance is not changing with respect to time, i.e. the left hand side of the four equations (5)-(8) are all zeros. This yields
+\begin{equation}
+	\alpha \{\frac{k}{k + p_n^0}\}^r = \delta_m m_n^0,
+\end{equation}
+
+\begin{equation}
+    \gamma_m m_n^0 = \delta_m m_c^0,
+\end{equation}
+
+\begin{equation}
+	\beta m_c^0 = \gamma_p p_c^0,
+\end{equation}
+
+\begin{equation}
+	\gamma_p p_c^0 = \delta_p p_n^0.
+\end{equation}
+Here the superscript $0$ denotes the value of the variable in its steady state. Multiplying all the four equations will give us
+\begin{equation}
+    \alpha \beta \{\frac{k}{k + p_n^0}\}^r = \delta_m \delta_p p_n^0.
+\end{equation}
+By plotting this we can assure that there is a unique positive steady state, as expected.
+
+Next, we linearize the four equations around the steady state. This gives us
+
+\begin{equation}
+    \frac{d\widetilde{m_n}}{dt} = -\eta \widetilde{p_n} - \gamma_m \widetilde{m_n},
+\end{equation}
+\begin{equation}
+	\frac{d \widetilde{m_c}}{dt} = \gamma_m \widetilde{m_n} - \delta_m \widetilde{m_c},
+\end{equation}
+
+\begin{equation}
+	\frac{d \widetilde{p_c}}{dt} = \beta \widetilde{m_c} - \gamma_p \widetilde{p_c},
+\end{equation}
+
+\begin{equation}
+	\frac{d \widetilde{p_n}}{dt} = \gamma_p \widetilde{p_c} - \delta_p \widetilde{p_n},
+\end{equation}
+where
+\begin{equation}
+    \eta = r \frac{\delta_m \delta_p}{\alpha \beta} \frac{p_n^0}{p_n^0 + k} \alpha,
+\end{equation}
+ and the variables with tildes are the deviations from the steady state values, e.g. $\widetilde{p_n} = p_n - p_n^0.$ Equations (15)-(18) hold when the deviations are small. A typical case is that after the system reaching equilibrium, there is some small perturbation.
+
+Let $\widetilde{\mathbf{x}} =
+\begin{bmatrix}
+\widetilde{m_n}  \\
+\widetilde{m_c}  \\
+\widetilde{p_c}  \\
+\widetilde{p_n}
+\end{bmatrix}$ and $A =
+\begin{bmatrix}
+-\gamma_m & 0 & 0 & -\eta \\
+\gamma_m &  - \delta_m & 0 & 0 \\
+0 &  \beta & - \gamma_p & 0 \\
+0 & 0 & \gamma_p &  - \delta_p
+\end{bmatrix}.$
+It follows that
+\begin{equation}
+    \frac{d\widetilde{\mathbf{x}}}{dt} = A \widetilde{\mathbf{x}}.
+\end{equation} This is a system of ordinary differential equations, and the behaviour of $\widetilde{\mathbf{x}}$ is characterized by the eigenvalues of matrix A. The characteristic equation of matrix A is given by
+\begin{align}
+    0 &= \det(\lambda I - A) \\
+    &= \det \left(\begin{bmatrix}
+\lambda + \gamma_m & 0 & 0 & \eta \\
+-\gamma_m &  \lambda + \delta_m & 0 & 0 \\
+0 &  -\beta & \lambda+\delta_p & 0 \\
+0 & 0 & -\gamma_p &  \lambda+ \delta_p
+\end{bmatrix}\right) \\
+&= (\lambda + \gamma_m)(\lambda + \delta_m)(\lambda + \gamma_p)(\lambda + \delta_p) + \eta \beta \gamma_m \gamma_p \\
+&= (\lambda + \gamma_m)(\lambda + \delta_m)(\lambda + \gamma_p)(\lambda + \delta_p) + G \gamma_m \delta_m \gamma_p \delta_p,
+\end{align}
+where \begin{align}
+    G &= \frac{\eta \beta}{\delta_m \delta_p} \\
+    &= \left(r \frac{\delta_m \delta_p}{\alpha \beta} \frac{p_n^0}{p_n^0 + k} \alpha\right) \frac{\beta}{\delta_m \delta_p} \\
+    &= \left(\frac{p_n^0}{k+p_n^0}\right) r.
+\end{align}
+The second equality follows from (19).
+
+We claim that the best case for oscillation is that
+\begin{equation}
+    \gamma_m = \delta_m = \gamma_p = \delta_p = \nu,
+\end{equation}
+in the sense that they generate oscillation with the smallest $G.$ Proof of this claim can be found here. Now, it follows from (24) that
+\begin{align}
+    0 &= (\lambda + \nu)^4 + G \nu ^4 \\
+    (\lambda + \nu)^4 &= -G \nu ^4 \\
+    (\lambda + \nu) &= (-1)^\frac{1}{4} G ^\frac{1}{4}\nu\\
+    \lambda &= \mu (-1 + (-1)^\frac{1}{4} G ^\frac{1}{4})
+\end{align}
+We see that there are four solutions to $\lambda$ and each is a complex number. In order for the system of ODEs (20) to have oscillating solutions, the real part of at least one $\lambda$ must be greater than $0.$ This implies that $G^\frac{1}{4} > \sqrt{2},$ or equivalently, $G>4.$ By (27), \begin{equation}
+    \left(\frac{p_n^0}{k+p_n^0}\right) r > 4.
+\end{equation}
+Since $ \left(\frac{p_n^0}{k+p_n^0}\right) < 1,$ it must be that $r\geq 5.$ Setting $r=5$ and Substituting this into the steady state equation, with some simple algebra we have
+\begin{equation}
+    \alpha \beta > \nu^2 k \cdot 4(1+4)^5.
+\end{equation}
+This sheds some light on how the parameters shall be chosen.
+
+\subsection{Two Cellular Oscillators}
+
+\section{Results}
+
+
 \begin{thebibliography}{9}
 
 	\bibitem{gyrocom}
