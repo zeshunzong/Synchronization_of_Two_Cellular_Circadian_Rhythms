@@ -30,8 +30,8 @@
 
 \title{Synchronization of Two Cellular Circadian Rhythms}
 \date{}
-\author[1]{Yuliang Shi}
-\author[2]{Zeshun Zong}
+\author[1]{Zeshun Zong}
+\author[2]{Yuliang Shi}
 \affil[1,2]{\footnotesize Courant Institute of Mathematical Sciences, New York University, New York}
 
 
@@ -57,7 +57,7 @@ In the rest of the paper, we first use the deterministic version to find suitabl
 The pathway is shown in Figure 1. The \textit{per} gene is transcribed into \textit{Per} mRNAs in the nucleus, which are then exported to the cytoplasm to be translated to PER protein and to degrade. Some PER proteins enter the nucleus where they inhibit the transcription of the \textit{per} gene and degrade in the nucleus. We assume that the PER proteins inhibit the transcription by binding to the DNA molecules on several pre-determined sites. The transcription continues if and only if none of the sites are occupied.
 
 
-\begin {figure}[t]
+\begin {figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{pathway.png}
 	\caption*{\small Figure 1: a schematic cellular clock}
@@ -95,7 +95,7 @@ Reaction  & Reaction Name                            & Rate (Probability)       
 \caption*{\small Table 1: Reaction Table}
 \end{table}
 The model consists of two versions.
-\subsection{Deterministic Version}
+\subsubsection{Deterministic Version}
 \hspace{5mm} If we view the number of molecules of each substance as large numbers, the fact that them being integers will have little influence on the model. In this way, we can set up the model using differential equations. Notice that the rate of change of the amount of one substance is equal to the rate that it is produced (imported) minus the rate that it is degraded (exported). This gives us the following:
 \begin{equation}
 	\frac{dm_n}{dt} = \alpha \{\frac{K}{K + p_n / V_n}\}^r - \delta_m m_n,
@@ -133,7 +133,7 @@ If we write $k = K V_n,$ then the first equation becomes $\frac{dm_n}{dt} = \alp
 Here we state that, besides modeling, the set of equations can also give insight on the choice of parameters in order to yield an expected oscillation. This is discussed later.
 
 
-\subsection{Stochastic (Microscopic) Version}
+\subsubsection{Stochastic (Microscopic) Version}
 \hspace{5mm} On the other hand, we can also look at the microscopic version, keeping track of the number of each molecules when each reaction happens. Recall that if an event has probability per unit time $r$ to happen, and let $T$ denote the time this event first happens, then
 \begin{equation}
 	\mathbb{P}(T > t) = \lim_{n \to \infty} \prod_{j=1}^{n} (1-\frac{rt}{n}) = \lim_{n \to \infty} (1 - \frac{rt}{n})^n = e^{-rt}.
@@ -226,7 +226,7 @@ We claim that the best case for oscillation is that
 \begin{equation}
     \gamma_m = \delta_m = \gamma_p = \delta_p = \nu,
 \end{equation}
-in the sense that they generate oscillation with the smallest $G.$ Proof of this claim can be found here. Now, it follows from (24) that
+in the sense that they generate oscillation with the smallest $G.$ Proof of this claim can be found in Peskin's work [1]. Now, it follows from (24) that
 \begin{align}
     0 &= (\lambda + \nu)^4 + G \nu ^4 \\
     (\lambda + \nu)^4 &= -G \nu ^4 \\
@@ -243,8 +243,59 @@ Since $ \left(\frac{p_n^0}{k+p_n^0}\right) < 1,$ it must be that $r\geq 5.$ Sett
 This sheds some light on how the parameters shall be chosen.
 
 \subsection{Two Cellular Oscillators}
+\hspace{5mm} The simplest approach to simulate the information exchange between two cells would be to allow diffusion of proteins between the cells. A demonstration of this approach can be seen in Figure 2. Here we propose two methods to model the diffusion.
+\begin {figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{two_cells.png}
+	\caption*{\small Figure 2: Protein diffusion between two cellular oscillators}
+\end {figure}
+
+\subsubsection{Direct flow of proteins}
+\hspace{5mm} This is the easiest version. Assume there is a pipe connecting the two cells. Protein molecules in one cell can move to the other cell through the pipe. The speed of diffusion is proportional to the difference in the number of protein molecules in the two cells, i.e.
+\begin{equation}
+	\frac{d {p_c^1}}{dt} = -F ({p_c^1 - p_c^2}),
+\end{equation}
+\begin{equation}
+	\frac{d {p_c^2}}{dt} = -\frac{d {p_c^1}}{dt}.
+\end{equation}
+Here the superscripts $1$ and $2$ indicate cell 1 and cell 2.
+
+Observe that although this method is simple and concise, it has a drawback that it can only be applied in the case when the two cells are identical in volume. When the volumes are different, it is the concentration, instead of the number of molecules that shall be compared. Hence an alternative method is discussed below.
+
+\subsubsection{Diffusion ETF}
+\hspace{5mm} write something
 
 \section{Results}
+\subsection{One Cell Oscillator}
+\hspace{5mm} Insert some pictures.
+
+\begin{figure}[h]
+    \centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_in.png}
+		\caption*{\small Figure}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_in.png}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_out.png}
+		\caption*{\small Figure}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_out.png}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
 
 
 \begin{thebibliography}{9}

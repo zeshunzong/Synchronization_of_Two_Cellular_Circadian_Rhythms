@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1543471840 "Final_Paper.tex" "Final_Paper.pdf" "Final_Paper" 1543471842
+["pdflatex"] 1543546703 "Final_Paper.tex" "Final_Paper.pdf" "Final_Paper" 1543546707
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -103,12 +103,17 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "Final_Paper.aux" 1543471841 1532 03fcd93481876a137b22ddd75432cef8 ""
-  "Final_Paper.out" 1543471841 550 a8f7fbde36f6e65cfbff29d7aad18f31 ""
-  "Final_Paper.tex" 1543471836 14135 45c0123cfd0d2ca83e8c48e2ff6b0594 ""
+  "Final_Paper.aux" 1543546703 1876 9f796df016612f1d7844a0a0a2394687 ""
+  "Final_Paper.out" 1543546703 794 61f1393c728cab6bdfd12bd09682d111 ""
+  "Final_Paper.tex" 1543546701 16340 74cc64dd1037cf18eac0bc4096e2379e ""
   "pathway.png" 1542420870 115549 34fbc66a8701d1da54a633406d059071 ""
+  "single_oscillator_zoom_in.png" 1543459339 48390 4e9d1ee0cbcab234a68d34efc488b145 ""
+  "single_oscillator_zoom_out.png" 1543460235 65103 3ba7d222eab3661df5537d3a6361d6a6 ""
+  "sto_single_oscillator_zoom_in.png" 1543544555 39439 3b8cecfaa16cd94345ed4cc785815441 ""
+  "sto_single_oscillator_zoom_out.png" 1543544476 38744 68c3a306d9dcf5fae72596b710c75f3c ""
+  "two_cells.png" 1542420870 166696 2a0721a46e9bc059d1f2f21a53f8febd ""
   (generated)
-  "Final_Paper.out"
   "Final_Paper.pdf"
   "Final_Paper.aux"
   "Final_Paper.log"
+  "Final_Paper.out"

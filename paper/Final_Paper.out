@@ -1,8 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Mathematical Modeling}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{A Simple Cellular Circadian Oscillator}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Deterministic Version}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Stochastic \(Microscopic\) Version}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Stability Analysis and Choice of Parameters}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Two Cellular Oscillators}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{Results}{}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Deterministic Version}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Stochastic \(Microscopic\) Version}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Stability Analysis and Choice of Parameters}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Two Cellular Oscillators}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Direct flow of proteins}{subsection.2.3}% 8
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Diffusion ETF}{subsection.2.3}% 9
+\BOOKMARK [1][-]{section.3}{Results}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{One Cell Oscillator}{section.3}% 11
