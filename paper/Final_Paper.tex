@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{float}
+\usepackage{listings}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{lineno}
@@ -70,6 +71,7 @@ The variables and parameters that describe the process is the following:
   \item $p_n$: number of protein molecules inside the nucleus;
   \item $p_c$: number of protein molecules in the cytoplasm;
   \item $\alpha$: transcription rate when no proteins are binding;
+  \item $\beta$: translation rate from mRNA to protein molecule;
   \item $r$: total number of sites on which the protein can bind;
   \item $K$: the equilibrium constant of the reaction of protein binding to DNA molecules;
   \item $\gamma_m$: the rate at which mRNAs inside the nucleus are transported to cytoplasm;
@@ -142,7 +144,7 @@ So $T$ follows an exponential distribution with parameter $r.$  Since $T$ is con
 
 In the stochastic approach, given initial amount of each substances, six reaction times (each follows an exponential distribution with the parameter being the reaction's probability per unit time, respectively) are generated. We assume only the first reaction actually happens. Then the numbers of molecules are adjusted correspondingly and the above process is repeated.
 
-\subsection{Stability Analysis and Choice of Parameters}
+\subsection{Stability Analysis and Choice of Parameters for Single Cell Oscillator Model}
 \hspace{5mm} In order to judiciously choose parameters so that the system defined by equations (5)-(8) can sustain a periodic oscillation, we perform a stability analysis of the system. The steady state is defined to be the case when the amount of each substance is not changing with respect to time, i.e. the left hand side of the four equations (5)-(8) are all zeros. This yields
 \begin{equation}
 	\alpha \{\frac{k}{k + p_n^0}\}^r = \delta_m m_n^0,
@@ -242,16 +244,16 @@ Since $ \left(\frac{p_n^0}{k+p_n^0}\right) < 1,$ it must be that $r\geq 5.$ Sett
 \end{equation}
 This sheds some light on how the parameters shall be chosen.
 
-\subsection{Two Cellular Oscillators}
-\hspace{5mm} The simplest approach to simulate the information exchange between two cells would be to allow diffusion of proteins between the cells. A demonstration of this approach can be seen in Figure 2. Here we propose two methods to model the diffusion.
+\subsection{Multi-Cellular Oscillator}
+\hspace{5mm} In this section, we propose three ways of modeling interactions among multiple cells. The simplest approach would be to allow direct diffusion of ``information'' between every two cells. A demonstration of this approach can be seen in Figure 2. \\
 \begin {figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{two_cells.png}
 	\caption*{\small Figure 2: Protein diffusion between two cellular oscillators}
 \end {figure}
 
-\subsubsection{Direct flow of proteins}
-\hspace{5mm} This is the easiest version. Assume there is a pipe connecting the two cells. Protein molecules in one cell can move to the other cell through the pipe. The speed of diffusion is proportional to the difference in the number of protein molecules in the two cells, i.e.
+\subsubsection{Direct flow of protein}
+\hspace{5mm} This is the easiest version. Assume there is a pipe connecting the two cells and these two cells have the same volume. Protein molecules in one cell can move to the other cell through the pipe. The speed of diffusion is proportional to the difference in the number of protein molecules in the two cells, i.e.
 \begin{equation}
 	\frac{d {p_c^1}}{dt} = -F ({p_c^1 - p_c^2}),
 \end{equation}
@@ -260,43 +262,204 @@ This sheds some light on how the parameters shall be chosen.
 \end{equation}
 Here the superscripts $1$ and $2$ indicate cell 1 and cell 2.
 
-Observe that although this method is simple and concise, it has a drawback that it can only be applied in the case when the two cells are identical in volume. When the volumes are different, it is the concentration, instead of the number of molecules that shall be compared. Hence an alternative method is discussed below.
+Observe that although this method is simple and concise, it has a limitation that it can only be applied in the case when the two cells are identical in volume. When the volumes are different, it is the concentration, instead of the number of molecules that shall be considered. Also, communicating ``information'' among cells of a multi-cellular organism are usually through a media called extra-cellular fluid rather than a direct diffusion among cells. Hence some alternative methods are discussed below.
 
-\subsubsection{Diffusion ETF}
+\subsubsection{Direct Diffusion with ECF}
+\hspace{5mm} ECF stands for extra-cellular fluid, by which cells live and communicate ``information'' with each other. We consider the case where, instead of connecting two cells with a pipe directly, there are only pipes between each cell and ECF. It means that, every time a protein molecule would like to go from one cell to another, it must go through ECF as a transportation media. \\
+
+Since new entity ECF are considered and we are more concerned with concentration, it would be better to establish some new notations: \\
+
+\begin{itemize}
+    \item $M_n^{(i)}$: concentration of mRNAs inside the nucleus for the ith cell;
+    \item $M_c^{(i)}$: concentration of mRNAs in the cytoplasm for the ith cell;
+    \item $P_n^{(i)}$: concentration of protein molecules inside nucleus for the ith cell;
+    \item $P_c^{(i)}$: concentration of protein molecules in cytoplasm for the ith cell;
+    \item $P_{ECF}$: concentration of protein molecules in extra-cellular fluid;
+    \item $\alpha^{(i)}$: transcription rate when no proteins are binding for the ith cell;
+    \item $\beta^{(i)}$: translation rate from mRNA to protein molecule for the ith cell;
+    \item $r^{(i)}$: total number of sites on which the protein can bind for the ith cell;
+    \item $K^{(i)}$: the equilibrium constant of the reaction of protein binding to DNA molecules for the ith cell;
+    \item $\gamma_m^{(i)}$: the rate at which mRNAs inside the nucleus are transported to cytoplasm for the ith cell;
+    \item $\delta_m^{(i)}$: the degradation rate of mRNAs in cytoplasm for the ith cell;
+    \item $\gamma_p^{(i)}$: the rate at which the protein molecules in the cytoplasm are transported into nucleus for the ith cell;
+    \item $\delta_p^{(i)}$: the degradation rate of this protein inside nucleus for the ith cell;
+    \item $\lambda_{ECF}$: the transposition rate at which protein molecules are transported between each cells and ECF;
+    \item $V_n^{(i)}$: volume of the nucleus for the ith cell;
+    \item $V_c^{(i)}$: volume of the cytoplasm for the ith cell;
+    \item $V_{ECF}$: volume of the ECF;
+    \item $n$: number of cells in a given organism.
+
+\end{itemize}
+
+Then, to describe the new dynamical system with ECF as transportation media, we write out a new system of ODE's:\\
+
+\begin{align}
+    \frac{dM_n^{(i)}}{dt} &= \frac{\alpha^{(i)}}{V_n^{(i)}} \{\frac{K^{(i)}}{K^{(i)} + P_n^{(i)}}\}^{r^{(i)}} - \gamma_m^{(i)} M_n^{(i)} \\
+    \frac{dM_c^{(i)}}{dt} &= \gamma_m^{(i)} (\frac{V_n^{(i)}}{V_c^{(i)}}) M_n^{(i)} - \delta_m^{(i)} M_c^{(i)} \\
+    \frac{dP_c^{(i)}}{dt} &= \beta^{(i)} M_c^{(i)} - \gamma_p^{(i)} P_c^{(i)} - \lambda_{ECF} (P_c^{(i)} - \frac{V_{ECF}}{V_c^{(i)}} P_{ECF})\\
+    \frac{dP_n^{(i)}}{dt} &= \gamma_p^{(i)} (\frac{V_c^{(i)}}{V_n^{(i)}}) P_c^{(i)} - \delta_p^{(i)} P_n^{(i)} \\
+    \frac{dP_{ECF}}{dt} &= \sum_i^n \lambda_{ECF} (\frac{V_c^{(i)}}{V_{ECF}} P_c^{(i)} - P_{ECF})
+\end{align}
+
+\textbf{Stability Analysis \\}
+
+With the dynamical system described above, we do analysis on stability of this system by analyzing eigenvalues of the linearized ODE system around steady state. Denote $M_n^{(i)0}, M_c^{(i)0}, P_c^{(i)0}, P_c^{(i)0}, P_{ECF}^{(i)0}$, for $i \in \{1, ..., n\}$, as the value for variables at a steady state. Then, as before, denote $\widetilde{M_n^{(i)}} = M_n^{(i)} - M_n^{(i)0}$, $\widetilde{P_n^{(i)}} = P_n^{(i)} - P_n^{(i)0}$, and etc.. Therefore, we have a system of linearized equation around steady state:
+
+\begin{align}
+    \frac{d\widetilde{M_n^{(i)}}}{dt} &= a^{(i)} \widetilde{P_n^{(i)}} - \gamma_m^{(i)} \widetilde{M_n^{(i)}}, \\
+    \frac{d\widetilde{M_c^{(i)}}}{dt} &= \gamma_m^{(i)} (\frac{V_n^{(i)}}{V_c^{(i)}}) \widetilde{M_n^{(i)}} - \delta_m^{(i)} \widetilde{M_c^{(i)}}, \\
+    \frac{d\widetilde{P_c^{(i)}}}{dt} &= \beta^{(i)} \widetilde{M_c^{(i)}} - (\gamma_p^{(i)} + \lambda_{ECF}) \widetilde{P_c^{(i)}} + \lambda_{ECF} \frac{V_{ECF}}{V_c^{(i)}} \widetilde{P_{ECF}}\\
+    \frac{d\widetilde{P_n^{(i)}}}{dt} &= \gamma_p^{(i)} (\frac{V_c^{(i)}}{V_n^{(i)}}) \widetilde{P_c^{(i)}} - \delta_p^{(i)} \widetilde{P_n^{(i)}}, \\
+    \frac{d\widetilde{P_{ECF}}}{dt} &= \sum_i^n \lambda_{ECF} \frac{V_c^{(i)}}{V_{ECF}} \widetilde{P_c^{(i)}} - n \lambda_{ECF} \widetilde{P_{ECF}},
+\end{align}
+
+where $a^{(i)} = -\frac{\alpha^{(i)} r^{(i)}}{V_n^{(i)} K^{(i)}} \{\frac{K^{(i)}}{K^{(i)} + P_n^{(i)0}}\}^{r^{(i)} + 1}$. \\
+
+At this point, in order to simplify this dynamical system for the sake of stability analysis and, meanwhile, to keep interesting features of the system, we do the followings: \\
+\begin{itemize}
+    \item Let n = 2, and
+    \item let $\gamma_m^{(i)} = \gamma_p^{(i)} = \delta_m^{(i)} = \delta_p^{(i)} = \lambda^{(i)}$ for $i \in \{1, 2\}$.
+\end{itemize}
+Thus, this linear system could also be rewritten as $\Dot{X} = AX$, where $A =$
+\begin{center}
+
+$
+\begin{bmatrix}
+-\lambda^{(1)}                  & 0             & 0                             & a^{(1)}                       &0           &0                               &0               &0                          &0                                  \\
+
+\lambda^{(1)} \frac{V_c^{(1)}}{V_n^{(1)}}& - \lambda^{(1)}   & 0                             & 0                         &0           &0                               &0               &0                          &0                                  \\
+
+0                           & \beta^{(1)}       & - (\lambda^{(1)} + \lambda_{ECF}) & 0                         &0           &0                               &0               &0                          &\lambda_{ECF} \frac{V_{ECF}}{V_c^{(1)}}  \\
+
+0                           & 0             & \lambda^{(1)} \frac{V_n^{(1)}}{V_c^{(1)}} & - \lambda^{(1)}               &0           &0                               &0               &0                          &0                                  \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+0 & 0 & 0 & 0 & -\lambda^{(2)}                      &0              & 0                                 & a^{(2)}                                  &0  \\
+
+0 & 0 & 0 & 0 & \lambda^{(2)}\frac{V_c^{(2)}}{V_n^{(2)}}    & -\lambda^{(2)}    & 0                                 & 0                                     &0  \\
+
+0 & 0 & 0 & 0 & 0                               & \beta^{(2)}       & -(\lambda^{(2)} + \lambda_{ECF})      & 0                         &\lambda_{ECF} \frac{V_{ECF}}{V_c^{(2)}}  \\
+
+0 & 0 & 0 & 0 & 0                               & 0             & \lambda^{(2)} \frac{V_n^{(2)}}{V_c^{(2)}}     & -\lambda^{(2)}
+&0 \\
+
+0 & 0 & \lambda_{ECF} \frac{V_c^{(1)}}{V_{ECF}} & 0 & 0                               & 0             & \lambda_{ECF} \frac{V_c^{(2)}}{V_{ECF}}     & 0
+&-2\lambda_{ECF} \\
+
+\end{bmatrix}$
+
+\end{center}
+
+, $X^T =
+\begin{bmatrix}
+\widetilde{M_n^{(1)}} &
+\widetilde{M_c^{(1)}} &
+\widetilde{P_c^{(1)}} &
+\widetilde{P_n^{(1)}} &
+\widetilde{M_n^{(2)}} &
+\widetilde{M_c^{(2)}} &
+\widetilde{P_c^{(2)}} &
+\widetilde{P_n^{(2)}} &
+\widetilde{P_{ECF}}
+\end{bmatrix}$, and $\Dot{X} = \frac{dX}{dt}$. \\
+
+To get matrix $A$ explicitly, we solve for $a^{(1)}$ and $a^{(2)}$.
+
+
+With \textit{MatLab}, we could compute all eigenvalues of A and store them in $E = \{e_j\}_{j \in \{1, ...,9\}}$, where $e_j \in \mathbb{C}$. Let $e_{max} = argmax_{\{e_j \in E\}} \{real(e_j)\}$, then if $real(e_{max}) > 0$, this system around the steady state is unstable. Otherwise, if $real(e_{max}) \le 0$, we could conclude that the system around such a steady state is stable. \\
+
+
+\textbf{}
+
+
+to write about: \\
+
+synchronization \\
+
+limitations \\
+
+
+
+\subsubsection{Positive Feedback Transposition with ECF}
 \hspace{5mm} write something
 
-\section{Results}
-\subsection{One Cell Oscillator}
-\hspace{5mm} Insert some pictures.
 
+
+\section{Results}
+\subsection{A Single Cellular Oscillator}
+\hspace{5mm} We first show the results of one cellular oscillator. The parameters are chosen as following: $r = 5,$ $k= 200,$ $\alpha = 100000,$ $\beta = 10,$ $\nu = \gamma_m = \gamma_p = \delta_m =\delta_p = 0.285599.$ Here $\nu$ is chosen to be $0.285599$ as this would give an oscillator whose period is close to 24 hours. $r$ is chosen to be the smallest possible value that allows the model to work. $\alpha, \beta$ and $k$ are chosen as such that realistic case is mimicked and equation (34) holds. Initial values of $p_n, p_c, m_n$ and $m_c$ do not play an critical role in the oscillation. In fact, as long as the initial values are not set to extremely large or small numbers, given sufficiently long time, the system will settle itself down and converge to a periodic oscillation, with $p_n, p_c, m_n$ and $m_c$ each fluctuating around roughly $1200, 1200, 40$ and $35,$ respectively. For example, a graph plotting the number of molecules of each substance, with the initial state set to $p_n = 500, p_c = 500, m_n = 500$ and $m_c = 500$, is shown in Figure X.
 \begin{figure}[h]
+    \centering
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{single_cell_show_convergence.png}
+		\caption*{\small Figure X: Convergence to oscillation ultimately.}
+	\end{minipage}
+
+\end{figure}
+
+It can be seen that after about 150 hours of reaction, the system converges to the periodic oscillation as specified above. We manually set the four initial values to be $p_n = 925, p_c = 730,m_n = 32$ and $m_c = 21$ at $t=0.$ We denote this set of values as the initial state for the oscillator. This set of values is (approximately) taken at some time when the system has already started its regular oscillation, so that our model will not go through the transition to regular oscillation. In fact, for purpose of comparison, this is the state in which $p_c$ starts at its lowest value.
+
+Using the above specification, two types of simulation, the deterministic version as well as the stochastic version, are both implemented. As mentioned above, the deterministic version is described by equations (5)-(8). The stochastic version is described by the last column in Table 1. A code snippet is shown below.
+
+\begin{lstlisting}
+    [Tmin, kmin] = min(T);
+    % Tmin is the time it takes for the "happened" reaction to happen.
+    % kmin is the position (1,2,3,4,5,6) indicating which reaction happens
+    switch kmin
+        case 1
+            % transcription happens
+            m_n = m_n + 1;
+        case 2
+            % mRNA enters cytoplasm from nucleus
+            m_n = m_n - 1;
+            m_c = m_c + 1;
+        case 3
+            % translation happens
+            p_c = p_c + 1;
+        case 4
+            % protein enters nucleus from cytoplasm
+            p_c = p_c - 1;
+            p_n = p_n + 1;
+        case 5
+            % degradation of mRNA
+            m_c = m_c - 1;
+        case 6
+            % degradation of protein
+            p_n = p_n - 1;
+    end
+    t = t + Tmin;
+\end{lstlisting}
+
+Results from both versions are plotted in Figure X-X. The numbers of molecules of each substance are plotted in each figure. Figure X and X are deterministic version, whose reaction times are set to 40 hours and 150 hours, respectively. Figure X and X are stochastic version, which are stair-case functions, whose reaction times are set to 40 hours and 150 hours, respectively. Observe that the results from the stochastic version resemble those from the deterministic version. Both versions show an oscillating period of about 24 hours. This confirms our expectation.
+\begin{figure} [h]
     \centering
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_in.png}
-		\caption*{\small Figure}
+		\caption*{\small Figure X: Deterministic version, up to $t=40.$}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_in.png}
-		\caption*{\small Figure}
+		\caption*{\small Figure X: Stochastic version, up to $t=40.$}
 	\end{minipage}
-\end{figure}
 
-\begin{figure}[h]
+\end{figure}
+\begin{figure} [h]
     \centering
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_out.png}
-		\caption*{\small Figure}
+		\caption*{\small Figure X: Deterministic version, up to $t=150.$}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_out.png}
-		\caption*{\small Figure}
+		\caption*{\small Figure X: Stochastic version, up to $t=150.$}
 	\end{minipage}
 \end{figure}
 
+\subsection{Two cellular oscillators with direct flow of protein}
 
 \begin{figure}[ht]
     \centering
@@ -324,12 +487,11 @@ Observe that although this method is simple and concise, it has a drawback that 
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
-
 \begin{figure}[ht]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{two_cell_same_period_diff_states_F04.png}
+		\includegraphics[width=0.8\textwidth]{two_cell_same_period_diff_states_F08.png}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
@@ -338,19 +500,40 @@ Observe that although this method is simple and concise, it has a drawback that 
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{two_cell_same_period_diff_states_F10.png}
+		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F0.png}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
-
 \begin{figure}[ht]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{two_mn_compare_F02.png}
+		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F01.png}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F02.png}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F08.png}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+
+
+
+
+\begin{comment}
 
 \begin{thebibliography}{9}
 
@@ -366,5 +549,7 @@ Observe that although this method is simple and concise, it has a drawback that 
 
 
 \end{thebibliography}
+\end{comment}
+
 
 \end{document}
