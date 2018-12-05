@@ -11,3 +11,8 @@
 \BOOKMARK [1][-]{section.3}{Results}{}% 11
 \BOOKMARK [2][-]{subsection.3.1}{A Single Cellular Oscillator}{section.3}% 12
 \BOOKMARK [2][-]{subsection.3.2}{Two cellular oscillators with direct flow of protein}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Two cellular oscillators with direct diffusion \(ECF\)}{section.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Stable to Unstable}{subsection.3.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Stable to Stable}{subsection.3.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Unstable to Unstable}{subsection.3.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Set of Eigenvalues with changing ECF}{subsection.3.3}% 18

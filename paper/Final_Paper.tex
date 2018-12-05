@@ -15,6 +15,8 @@
 \usepackage{afterpage}
 \usepackage{hyperref}
 \usepackage{verbatim}
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt,after=\vspace{1.\baselineskip}}
 
 \usepackage[noblocks]{authblk}
 %\usepackage{natbib}
@@ -269,12 +271,16 @@ Observe that although this method is simple and concise, it has a limitation tha
 
 Since new entity ECF are considered and we are more concerned with concentration, it would be better to establish some new notations: \\
 
+\textbf{Variables: \\}
 \begin{itemize}
     \item $M_n^{(i)}$: concentration of mRNAs inside the nucleus for the ith cell;
     \item $M_c^{(i)}$: concentration of mRNAs in the cytoplasm for the ith cell;
     \item $P_n^{(i)}$: concentration of protein molecules inside nucleus for the ith cell;
     \item $P_c^{(i)}$: concentration of protein molecules in cytoplasm for the ith cell;
     \item $P_{ECF}$: concentration of protein molecules in extra-cellular fluid;
+\end{itemize}
+\textbf{\hspace{5mm} Parameters: \\}
+\begin{itemize}
     \item $\alpha^{(i)}$: transcription rate when no proteins are binding for the ith cell;
     \item $\beta^{(i)}$: translation rate from mRNA to protein molecule for the ith cell;
     \item $r^{(i)}$: total number of sites on which the protein can bind for the ith cell;
@@ -283,12 +289,11 @@ Since new entity ECF are considered and we are more concerned with concentration
     \item $\delta_m^{(i)}$: the degradation rate of mRNAs in cytoplasm for the ith cell;
     \item $\gamma_p^{(i)}$: the rate at which the protein molecules in the cytoplasm are transported into nucleus for the ith cell;
     \item $\delta_p^{(i)}$: the degradation rate of this protein inside nucleus for the ith cell;
-    \item $\lambda_{ECF}$: the transposition rate at which protein molecules are transported between each cells and ECF;
     \item $V_n^{(i)}$: volume of the nucleus for the ith cell;
     \item $V_c^{(i)}$: volume of the cytoplasm for the ith cell;
     \item $V_{ECF}$: volume of the ECF;
+    \item $\lambda_{ECF}$: the transposition rate at which protein molecules are transported between each cells and ECF;
     \item $n$: number of cells in a given organism.
-
 \end{itemize}
 
 Then, to describe the new dynamical system with ECF as transportation media, we write out a new system of ODE's:\\
@@ -296,21 +301,22 @@ Then, to describe the new dynamical system with ECF as transportation media, we 
 \begin{align}
     \frac{dM_n^{(i)}}{dt} &= \frac{\alpha^{(i)}}{V_n^{(i)}} \{\frac{K^{(i)}}{K^{(i)} + P_n^{(i)}}\}^{r^{(i)}} - \gamma_m^{(i)} M_n^{(i)} \\
     \frac{dM_c^{(i)}}{dt} &= \gamma_m^{(i)} (\frac{V_n^{(i)}}{V_c^{(i)}}) M_n^{(i)} - \delta_m^{(i)} M_c^{(i)} \\
-    \frac{dP_c^{(i)}}{dt} &= \beta^{(i)} M_c^{(i)} - \gamma_p^{(i)} P_c^{(i)} - \lambda_{ECF} (P_c^{(i)} - \frac{V_{ECF}}{V_c^{(i)}} P_{ECF})\\
+    \frac{dP_c^{(i)}}{dt} &= \beta^{(i)} M_c^{(i)} - \gamma_p^{(i)} P_c^{(i)} - \lambda_{ECF} (P_c^{(i)} - P_{ECF})\\
     \frac{dP_n^{(i)}}{dt} &= \gamma_p^{(i)} (\frac{V_c^{(i)}}{V_n^{(i)}}) P_c^{(i)} - \delta_p^{(i)} P_n^{(i)} \\
-    \frac{dP_{ECF}}{dt} &= \sum_i^n \lambda_{ECF} (\frac{V_c^{(i)}}{V_{ECF}} P_c^{(i)} - P_{ECF})
+    \frac{dP_{ECF}}{dt} &= \sum_i^n \lambda_{ECF} \frac{V_c^{(i)}}{V_{ECF}} (P_c^{(i)} - P_{ECF})
 \end{align}
 
-\textbf{Stability Analysis \\}
+\vspace{15mm}
 
+\textbf{Stability Analysis}
 With the dynamical system described above, we do analysis on stability of this system by analyzing eigenvalues of the linearized ODE system around steady state. Denote $M_n^{(i)0}, M_c^{(i)0}, P_c^{(i)0}, P_c^{(i)0}, P_{ECF}^{(i)0}$, for $i \in \{1, ..., n\}$, as the value for variables at a steady state. Then, as before, denote $\widetilde{M_n^{(i)}} = M_n^{(i)} - M_n^{(i)0}$, $\widetilde{P_n^{(i)}} = P_n^{(i)} - P_n^{(i)0}$, and etc.. Therefore, we have a system of linearized equation around steady state:
 
 \begin{align}
     \frac{d\widetilde{M_n^{(i)}}}{dt} &= a^{(i)} \widetilde{P_n^{(i)}} - \gamma_m^{(i)} \widetilde{M_n^{(i)}}, \\
     \frac{d\widetilde{M_c^{(i)}}}{dt} &= \gamma_m^{(i)} (\frac{V_n^{(i)}}{V_c^{(i)}}) \widetilde{M_n^{(i)}} - \delta_m^{(i)} \widetilde{M_c^{(i)}}, \\
-    \frac{d\widetilde{P_c^{(i)}}}{dt} &= \beta^{(i)} \widetilde{M_c^{(i)}} - (\gamma_p^{(i)} + \lambda_{ECF}) \widetilde{P_c^{(i)}} + \lambda_{ECF} \frac{V_{ECF}}{V_c^{(i)}} \widetilde{P_{ECF}}\\
+    \frac{d\widetilde{P_c^{(i)}}}{dt} &= \beta^{(i)} \widetilde{M_c^{(i)}} - (\gamma_p^{(i)} + \lambda_{ECF}) \widetilde{P_c^{(i)}} + \lambda_{ECF} \widetilde{P_{ECF}} \\
     \frac{d\widetilde{P_n^{(i)}}}{dt} &= \gamma_p^{(i)} (\frac{V_c^{(i)}}{V_n^{(i)}}) \widetilde{P_c^{(i)}} - \delta_p^{(i)} \widetilde{P_n^{(i)}}, \\
-    \frac{d\widetilde{P_{ECF}}}{dt} &= \sum_i^n \lambda_{ECF} \frac{V_c^{(i)}}{V_{ECF}} \widetilde{P_c^{(i)}} - n \lambda_{ECF} \widetilde{P_{ECF}},
+    \frac{d\widetilde{P_{ECF}}}{dt} &= \sum_i^n \lambda_{ECF} \frac{V_c^{(i)}}{V_{ECF}} \widetilde{P_c^{(i)}} - n \lambda_{ECF} \frac{V_c^{(i)}}{V_{ECF}} \widetilde{P_{ECF}},
 \end{align}
 
 where $a^{(i)} = -\frac{\alpha^{(i)} r^{(i)}}{V_n^{(i)} K^{(i)}} \{\frac{K^{(i)}}{K^{(i)} + P_n^{(i)0}}\}^{r^{(i)} + 1}$. \\
@@ -329,7 +335,7 @@ $
 
 \lambda^{(1)} \frac{V_c^{(1)}}{V_n^{(1)}}& - \lambda^{(1)}   & 0                             & 0                         &0           &0                               &0               &0                          &0                                  \\
 
-0                           & \beta^{(1)}       & - (\lambda^{(1)} + \lambda_{ECF}) & 0                         &0           &0                               &0               &0                          &\lambda_{ECF} \frac{V_{ECF}}{V_c^{(1)}}  \\
+0                           & \beta^{(1)}       & - (\lambda^{(1)} + \lambda_{ECF}) & 0                         &0           &0                               &0               &0                          &\lambda_{ECF} \\
 
 0                           & 0             & \lambda^{(1)} \frac{V_n^{(1)}}{V_c^{(1)}} & - \lambda^{(1)}               &0           &0                               &0               &0                          &0                                  \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -337,13 +343,13 @@ $
 
 0 & 0 & 0 & 0 & \lambda^{(2)}\frac{V_c^{(2)}}{V_n^{(2)}}    & -\lambda^{(2)}    & 0                                 & 0                                     &0  \\
 
-0 & 0 & 0 & 0 & 0                               & \beta^{(2)}       & -(\lambda^{(2)} + \lambda_{ECF})      & 0                         &\lambda_{ECF} \frac{V_{ECF}}{V_c^{(2)}}  \\
+0 & 0 & 0 & 0 & 0                               & \beta^{(2)}       & -(\lambda^{(2)} + \lambda_{ECF})      & 0                         &\lambda_{ECF}\\
 
 0 & 0 & 0 & 0 & 0                               & 0             & \lambda^{(2)} \frac{V_n^{(2)}}{V_c^{(2)}}     & -\lambda^{(2)}
 &0 \\
 
 0 & 0 & \lambda_{ECF} \frac{V_c^{(1)}}{V_{ECF}} & 0 & 0                               & 0             & \lambda_{ECF} \frac{V_c^{(2)}}{V_{ECF}}     & 0
-&-2\lambda_{ECF} \\
+&- \sum_{i=1}^{2} \{\lambda_{ECF} \frac{V_c^{(i)}}{V_{ECF}}\}\\
 
 \end{bmatrix}$
 
@@ -362,31 +368,61 @@ $
 \widetilde{P_{ECF}}
 \end{bmatrix}$, and $\Dot{X} = \frac{dX}{dt}$. \\
 
-To get matrix $A$ explicitly, we solve for $a^{(1)}$ and $a^{(2)}$.
+To express matrix $A$ explicitly in terms of parameters, we solve for $P_n^{(1)0}$ and $P_n^{(2)0}$ and thus we could get $a^{(1)}$ and $a^{(2)}$. \\
 
 
-With \textit{MatLab}, we could compute all eigenvalues of A and store them in $E = \{e_j\}_{j \in \{1, ...,9\}}$, where $e_j \in \mathbb{C}$. Let $e_{max} = argmax_{\{e_j \in E\}} \{real(e_j)\}$, then if $real(e_{max}) > 0$, this system around the steady state is unstable. Otherwise, if $real(e_{max}) \le 0$, we could conclude that the system around such a steady state is stable. \\
+With \textit{MatLab}, we could compute all eigenvalues of A and store them in $E = \{e_j\}_{j \in \{1, ...,9\}}$, where $e_j \in \mathbb{C}$. Let $e_{max} = argmax_{\{e_j \in E\}} \{real(e_j)\}$, then if $real(e_{max}) > 0$, this system around the steady state is unstable. Otherwise, we could conclude that the system around such a steady state is stable. \\
 
 
-\textbf{}
+\textbf{Synchronization} We will show by empirical results that the periods of oscillation of two and more cells are influenced by communications among them as well as ECF. Moreover, we will also verify that there are some cases where a tendency to a synchronized period among cells could be observed. \\
 
 
-to write about: \\
+\textbf{Limitations}
+Some limitations of this model may be, in most case, protein transportation does not happen only based on concentration differences between two sides of cell membrane. In other words, this process is usually not a passive free diffusion but very often a active transport, which involves control from cells based on concentration of protein. \\
 
-synchronization \\
-
-limitations \\
-
-
+In light of this, we propose the next model -- \textit{Positive Feedback Transposition with ECF}.
 
 \subsubsection{Positive Feedback Transposition with ECF}
-\hspace{5mm} write something
+\hspace{5mm} Considering the process of transporting protein from side $A$ of cell membrane to the other side $B$. And, there are $r$ binding sites for this protein on the face of membrane on side $A$. With more sites been occupied, the speed of transportation increases, i.e. positive feedback. We could assume the binding and unbinding reactions are in rapid equilibrium with equilibrium constant $K$. Also, the transportation rate with no binding sites been occupied is $\alpha$.
+
+\begin{figure} [h]
+    \centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{PFAn.png}
+		\caption*{\small Figure X: Animation of PFT}
+	\end{minipage}
+
+\end{figure}
 
 
+To formalize this idea, we need to introduce more parameters in order to describe this dynamical system. \\
+
+\textbf{\hspace{5mm}More Parameters: \\}
+\begin{itemize}
+    \item $\alpha_{ex}^{(i)}$: exporting rate when no proteins are binding on the inner side of cell membrane for the ith cell;
+    \item $\alpha_{im}^{(i)}$: importing rate when no proteins are binding on the outer side of cell membrane for the ith cell;
+    \item $r_{ex}^{(i)}$: total number of sites on the inner side of cell membrane on which the protein can bind in the ith cell;
+    \item $r_{im}^{(i)}$: total number of sites on the outer side of cell membrane on which the protein can bind for the ith cell;
+    \item $K_{ex}^{(i)}$: the equilibrium constant of the reaction of protein binding to sites on the inner face of cell membrane for the ith cell;
+    \item $K_{im}^{(i)}$: the equilibrium constant of the reaction of protein binding to sites on the outer face of cell membrane for the ith cell.
+\end{itemize}
+
+\begin{align}
+    \frac{dM_n^{(i)}}{dt} &= \frac{\alpha^{(i)}}{V_n^{(i)}} \{\frac{K^{(i)}}{K^{(i)} + P_n^{(i)}}\}^{r^{(i)}} - \gamma_m^{(i)} M_n^{(i)} \\
+    \frac{dM_c^{(i)}}{dt} &= \gamma_m^{(i)} (\frac{V_n^{(i)}}{V_c^{(i)}}) M_n^{(i)} - \delta_m^{(i)} M_c^{(i)} \\
+    \frac{dP_c^{(i)}}{dt} &= \beta^{(i)} M_c^{(i)} - \gamma_p^{(i)} P_c^{(i)} - \frac{\alpha_{ex}^{(i)}}{V_c^{(i)}} (\frac{P_c^{(i)}}{K_{ex}^{(i)} + P_c^{(i)}})^{r_{ex}^{(i)}} + \frac{\alpha_{im}^{(i)}}{V_c^{(i)}} (\frac{P_{ECF}}{K_{im}^{(i)} + P_{ECF}})^{r_{im}^{(i)}} \\
+    \frac{dP_n^{(i)}}{dt} &= \gamma_p^{(i)} (\frac{V_c^{(i)}}{V_n^{(i)}}) P_c^{(i)} - \delta_p^{(i)} P_n^{(i)} \\
+    \frac{dP_{ECF}}{dt} &= \sum_i^n (\frac{\alpha_{ex}^{(i)}}{V_{ECF}} (\frac{P_c^{(i)}}{K_{ex}^{(i)} + P_c^{(i)}})^{r_{ex}^{(i)}} - \frac{\alpha_{im}^{(i)}}{V_{ECF}} (\frac{P_{ECF}}{K_{im}^{(i)} + P_{ECF}})^{r_{im}^{(i)}})
+\end{align}
+
+\newpage
 
 \section{Results}
 \subsection{A Single Cellular Oscillator}
-\hspace{5mm} We first show the results of one cellular oscillator. The parameters are chosen as following: $r = 5,$ $k= 200,$ $\alpha = 100000,$ $\beta = 10,$ $\nu = \gamma_m = \gamma_p = \delta_m =\delta_p = 0.285599.$ Here $\nu$ is chosen to be $0.285599$ as this would give an oscillator whose period is close to 24 hours. $r$ is chosen to be the smallest possible value that allows the model to work. $\alpha, \beta$ and $k$ are chosen as such that realistic case is mimicked and equation (34) holds. Initial values of $p_n, p_c, m_n$ and $m_c$ do not play an critical role in the oscillation. In fact, as long as the initial values are not set to extremely large or small numbers, given sufficiently long time, the system will settle itself down and converge to a periodic oscillation, with $p_n, p_c, m_n$ and $m_c$ each fluctuating around roughly $1200, 1200, 40$ and $35,$ respectively. For example, a graph plotting the number of molecules of each substance, with the initial state set to $p_n = 500, p_c = 500, m_n = 500$ and $m_c = 500$, is shown in Figure X.
+\hspace{5mm} Throughout the section we will use the amount of $m_n$, mRNAs in nucleus, to draw results and conclusions about circadian oscillations.
+
+We first show the results of one cellular oscillator. The parameters are chosen as following: $r = 5,$ $k= 200,$ $\alpha = 100000,$ $\beta = 10,$ $\nu = \gamma_m = \gamma_p = \delta_m =\delta_p = 0.285599.$ Here $\nu$ is chosen to be $0.285599$ as this would give an oscillator whose period is close to 24 hours. $r$ is chosen to be the smallest possible value that allows the model to work. $\alpha, \beta$ and $k$ are chosen as such that realistic case is mimicked and equation (34) holds. Initial values of $p_n, p_c, m_n$ and $m_c$ do not play an critical role in the oscillation. In fact, as long as the initial values are not set to extremely large or small numbers, given sufficiently long time, the system will settle itself down and converge to a periodic oscillation, with $p_n, p_c, m_n$ and $m_c$ each fluctuating around roughly $1200, 1200, 40$ and $35,$ respectively. For example, a graph plotting the number of molecules of each substance, with the initial state set to $p_n = 500, p_c = 500, m_n = 500$ and $m_c = 500$, is shown in Figure X.
 \begin{figure}[h]
     \centering
 	\begin{minipage}{0.5\textwidth}
@@ -460,12 +496,67 @@ Results from both versions are plotted in Figure X-X. The numbers of molecules o
 \end{figure}
 
 \subsection{Two cellular oscillators with direct flow of protein}
+\hspace{5mm} We use the direct flow of protein molecules, described in equations (35) and (36), to examine how two cells can synchronize their oscillations. Consider two identical cells, each of which has a circadian oscillation discussed right above, whose only difference is the initial state. We manually set the initial state of the first cell to be $p^1_n = 925, p^1_c = 730, m^1_n = 32$ and $m^1_c = 21,$ and the initial state of the second cell to be $p^2_n = 1403, p^2_c = 1670, m^2_n = 33$ and $m^2_c = 48.$ These values are chosen such at both cells fall in regular oscillating cycles, and that $p^1_c$ starts at its nadir and $p^2_c$ starts at its zenith. Equivalently, the two oscillations in the two cells have a phase difference of $\frac{1}{2}T,$ with $T$ being the common period.\\
+
+\textbf{Deterministic Version}\\
+\hspace{5mm} Imagine that the two cells are connected by a pipe and there is a valve, represented by the value of $F$ in our model. If the valve is shut down, or $F=0,$ then obviously there is no flow of protein between the two cells. The two cells would each follow its individual circadian rhythm, so the phase difference of $\frac{1}{2}T$ would be eternally be kept, regardless of how long the reactions have happened. This is demonstrated in Figure X. Observe that the flow of protein is constantly zero and the oscillations in each cell are not interacting at all with each other.
+
+
+Next we open the valve a little bit, by setting $F = 0.01.$ $p_c$ and $m_n$ in each cell, and the flow protein across time are plotted in Figure X. We can see that although the phase difference is large at the beginning, the flow of protein drags the two oscillations together so that in approximately 100 hours, the phase difference almost gets eliminated and the two cells run on a shared, synchronized circadian rhythm. Also notice that the flow of protein gradually damps down as the two oscillations gradually converge.
+
+
+It is natural to expect that, if faster flow is allowed, the convergence would also be faster. Results from modeling with $F = 0.02$ and $F=0.08$ are plotted in Figure X and X, and they confirm our expectation. When $F$ is set to be $0.02,$ after about 500 hours of synchronization, the phase difference becomes indiscernible.
+
+
+\begin{figure}[h]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{combined_results.png}
+		\caption*{\small Figure X.}
+	\end{minipage}
+\end{figure}
+
+
+
+\begin{figure}[h]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{diff_periods_combine.png}
+		\caption*{\small Figure X.}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.99\textwidth]{sto_two_80_100_compare.png}
+		\caption*{\small Figure X.}
+	\end{minipage}
+\end{figure}
+
+
+
+
+When $F$ is set to be $0.08,$ we can see that the synchronization becomes much faster. It only takes about 100 hours for the two cells to synchronize their oscillations. Also notice that the magnitude of the flow of proteins during synchronization is much larger than that in previous cases.
+
+
+
+\textbf{Stochastic Version}\\
+\hspace{5mm} The stochastic version of this model yields similar results.
+
+
+\subsection{Two cellular oscillators with direct diffusion (ECF)}
+
+\subsubsection{Stable to Unstable}
 
 \begin{figure}[ht]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{two_cell_same_period_diff_states_F0.png}
+		\includegraphics[width=0.8\textwidth]{SU.jpg}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
@@ -474,7 +565,18 @@ Results from both versions are plotted in Figure X-X. The numbers of molecules o
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{two_cell_same_period_diff_states_F01.png}
+		\includegraphics[width=0.8\textwidth]{SUEi.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+\subsubsection{Stable to Stable}
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{SS.jpg}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
@@ -483,15 +585,19 @@ Results from both versions are plotted in Figure X-X. The numbers of molecules o
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{two_cell_same_period_diff_states_F02.png}
+		\includegraphics[width=0.8\textwidth]{SSEi.jpg}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
+
+
+\subsubsection{Unstable to Unstable}
+
 \begin{figure}[ht]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{two_cell_same_period_diff_states_F08.png}
+		\includegraphics[width=0.8\textwidth]{UU.jpg}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
@@ -500,36 +606,22 @@ Results from both versions are plotted in Figure X-X. The numbers of molecules o
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F0.png}
-		\caption*{\small Figure}
-	\end{minipage}
-\end{figure}
-\begin{figure}[ht]
-    \centering
-	\begin{minipage}{0.99\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F01.png}
-		\caption*{\small Figure}
-	\end{minipage}
-\end{figure}
-\begin{figure}[ht]
-    \centering
-	\begin{minipage}{0.99\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F02.png}
-		\caption*{\small Figure}
-	\end{minipage}
-\end{figure}
-\begin{figure}[ht]
-    \centering
-	\begin{minipage}{0.99\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{sto_two_cell_same_period_diff_states_F08.png}
+		\includegraphics[width=0.8\textwidth]{UUEi.jpg}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}
 
 
+\subsubsection{Set of Eigenvalues with changing $\lambda_{ECF}$}
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{all_lambda_Ei.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
 
 
 
