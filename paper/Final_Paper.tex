@@ -435,6 +435,31 @@ We first show the results of one cellular oscillator. The parameters are chosen 
 
 It can be seen that after about 150 hours of reaction, the system converges to the periodic oscillation as specified above. We manually set the four initial values to be $p_n = 925, p_c = 730,m_n = 32$ and $m_c = 21$ at $t=0.$ We denote this set of values as the initial state for the oscillator. This set of values is (approximately) taken at some time when the system has already started its regular oscillation, so that our model will not go through the transition to regular oscillation. In fact, for purpose of comparison, this is the state in which $p_c$ starts at its lowest value.
 
+\begin{figure}[h]
+    \centering
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_in.png}
+		\caption*{\small Figure X: Deterministic version, up to $t=40.$}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_in.png}
+		\caption*{\small Figure X: Stochastic version, up to $t=40.$}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_out.png}
+		\caption*{\small Figure X: Deterministic version, up to $t=150.$}
+	\end{minipage}
+	\begin{minipage}{0.45\textwidth}
+		\centering
+		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_out.png}
+		\caption*{\small Figure X: Stochastic version, up to $t=150.$}
+	\end{minipage}
+
+\end{figure}
+
 Using the above specification, two types of simulation, the deterministic version as well as the stochastic version, are both implemented. As mentioned above, the deterministic version is described by equations (5)-(8). The stochastic version is described by the last column in Table 1. A code snippet is shown below.
 
 \begin{lstlisting}
@@ -466,58 +491,39 @@ Using the above specification, two types of simulation, the deterministic versio
     t = t + Tmin;
 \end{lstlisting}
 
-Results from both versions are plotted in Figure X-X. The numbers of molecules of each substance are plotted in each figure. Figure X and X are deterministic version, whose reaction times are set to 40 hours and 150 hours, respectively. Figure X and X are stochastic version, which are stair-case functions, whose reaction times are set to 40 hours and 150 hours, respectively. Observe that the results from the stochastic version resemble those from the deterministic version. Both versions show an oscillating period of about 24 hours. This confirms our expectation.
-\begin{figure} [h]
-    \centering
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_in.png}
-		\caption*{\small Figure X: Deterministic version, up to $t=40.$}
-	\end{minipage}
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_in.png}
-		\caption*{\small Figure X: Stochastic version, up to $t=40.$}
-	\end{minipage}
-
-\end{figure}
-\begin{figure} [h]
-    \centering
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_out.png}
-		\caption*{\small Figure X: Deterministic version, up to $t=150.$}
-	\end{minipage}
-	\begin{minipage}{0.45\textwidth}
-		\centering
-		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_out.png}
-		\caption*{\small Figure X: Stochastic version, up to $t=150.$}
-	\end{minipage}
-\end{figure}
-
-\subsection{Two cellular oscillators with direct flow of protein}
-\hspace{5mm} We use the direct flow of protein molecules, described in equations (35) and (36), to examine how two cells can synchronize their oscillations. Consider two identical cells, each of which has a circadian oscillation discussed right above, whose only difference is the initial state. We manually set the initial state of the first cell to be $p^1_n = 925, p^1_c = 730, m^1_n = 32$ and $m^1_c = 21,$ and the initial state of the second cell to be $p^2_n = 1403, p^2_c = 1670, m^2_n = 33$ and $m^2_c = 48.$ These values are chosen such at both cells fall in regular oscillating cycles, and that $p^1_c$ starts at its nadir and $p^2_c$ starts at its zenith. Equivalently, the two oscillations in the two cells have a phase difference of $\frac{1}{2}T,$ with $T$ being the common period.\\
-
-\textbf{Deterministic Version}\\
-\hspace{5mm} Imagine that the two cells are connected by a pipe and there is a valve, represented by the value of $F$ in our model. If the valve is shut down, or $F=0,$ then obviously there is no flow of protein between the two cells. The two cells would each follow its individual circadian rhythm, so the phase difference of $\frac{1}{2}T$ would be eternally be kept, regardless of how long the reactions have happened. This is demonstrated in Figure X. Observe that the flow of protein is constantly zero and the oscillations in each cell are not interacting at all with each other.
 
 
-Next we open the valve a little bit, by setting $F = 0.01.$ $p_c$ and $m_n$ in each cell, and the flow protein across time are plotted in Figure X. We can see that although the phase difference is large at the beginning, the flow of protein drags the two oscillations together so that in approximately 100 hours, the phase difference almost gets eliminated and the two cells run on a shared, synchronized circadian rhythm. Also notice that the flow of protein gradually damps down as the two oscillations gradually converge.
-
-
-It is natural to expect that, if faster flow is allowed, the convergence would also be faster. Results from modeling with $F = 0.02$ and $F=0.08$ are plotted in Figure X and X, and they confirm our expectation. When $F$ is set to be $0.02,$ after about 500 hours of synchronization, the phase difference becomes indiscernible.
-
-
-\begin{figure}[h]
+\begin{figure}[!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{combined_results.png}
-		\caption*{\small Figure X.}
+		\caption*{\small Figure X. Two identical cells with different initial states.}
 	\end{minipage}
+	\footnotesize
+	\emph{Graphs on the left column are deterministic versions. Graphs on the right column are stochastic versions. Graphs on the same row are plotted for models with the same value of $F.$ The first and second plot in each graph are the number of proteins in cytoplasm and mRNAs in nucleus. The third plot is the flow of protein. Observe that each two graphs in the same row look similar.}
 \end{figure}
 
+Results from both versions are plotted in Figure X. The numbers of molecules of each substance are plotted in each figure. (a)-(d) are deterministic version, whose reaction times are set to 40 hours and 150 hours, respectively. Figure (e)-(h) are stochastic version, which are stair-case functions, whose reaction times are set to 40 hours and 150 hours, respectively. Observe that the results from the stochastic version resemble those from the deterministic version. Both versions show an oscillating period of about 24 hours. This confirms our expectation.
 
+
+\subsection{Two cellular oscillators with direct flow of protein}
+\subsubsection{Two cells with only phase difference}
+\hspace{5mm} We use the direct flow of protein molecules, described in equations (35) and (36), to examine how two cells can synchronize their oscillations. Consider two identical cells, each of which has a circadian oscillation discussed above, whose only difference is the initial state. We manually set the initial state of the first cell to be $p^1_n = 925, p^1_c = 730, m^1_n = 32$ and $m^1_c = 21,$ and the initial state of the second cell to be $p^2_n = 1403, p^2_c = 1670, m^2_n = 33$ and $m^2_c = 48.$ These values are chosen such at both cells fall in regular oscillating cycles, and that $p^1_c$ starts at its nadir and $p^2_c$ starts at its zenith. Equivalently, the two oscillations in the two cells have a phase difference of $\frac{1}{2}T,$ with $T$ being the common period.
+
+Imagine that the two cells are connected by a pipe and there is a valve, represented by the value of $F$ in our model. If the valve is shut down, or $F=0,$ then obviously there is no flow of protein between the two cells. The two cells would each follow its individual circadian rhythm, so the phase difference of $\frac{1}{2}T$ would be eternally kept, regardless of how long the reactions have happened. This is demonstrated in Figure X(a). Observe that the flow of protein is constantly zero and the oscillations in each cell are not interacting at all with each other.
+
+
+Next we open the valve a little bit, by setting $F = 0.01.$ $p_c$ and $m_n$ in each cell, and the flow protein across time are plotted in Figure X(b). We can see that although the phase difference is large at the beginning, the flow of protein drags the two oscillations together so that in approximately 100 hours, the phase difference almost gets eliminated and the two cells run on a shared, synchronized circadian rhythm. Also notice that the flow of protein gradually damps down as the two oscillations gradually converge.
+
+
+It is natural to expect that, if faster flow is allowed, the convergence would also be faster. Results from modeling with $F = 0.02$ and $F=0.08$ are plotted in Figure X(c) and (d), and they confirm our expectation. When $F$ is set to be $0.02,$ after about 500 hours of synchronization, the phase difference becomes indiscernible. When $F$ is set to be $0.08,$ we can see that the synchronization becomes much faster. It only takes about 100 hours for the two cells to synchronize their oscillations. Also notice that the magnitude of the flow of proteins during synchronization is much larger than that in previous cases.
+
+The corresponding stochastic versions are plotted in Figure X(e), (f), (g) and (h). Results are similar in the sense that $F=0$ yields no convergence, while $F = 0.01, 0.02, 0.08$ each yield successful synchronization of the two circadian oscillation, with consecutively faster and faster rate of convergence. Comparing (b) and (f), and (c) and (g), we suspect that perhaps in the stochastic model, the shorter amount of time, as the inherent noise in the stochastic system may actually help the synchronization. Nevertheless, due to its stochastic nature, we cannot prove this conjecture without further research.
+
+In the case where two cells have identical structure, but only phase difference, we conclude that the synchronization is easy. With some protein flow, the two systems can align themselves to a shared oscillation. This resembles the information exchange in cells in the same organ, as they tend to have almost the same structure, but their being born at different time generate the phase differences among them. The result is not surprising, but what is remarkable is that, some very slight amount of protein flow between the two cells (i.e. $F$ is very small) would be sufficient to allow the two cells to get synchronized.
+
+\subsubsection{Two cells with different oscillating periods}
 
 \begin{figure}[h]
     \centering
@@ -526,26 +532,34 @@ It is natural to expect that, if faster flow is allowed, the convergence would a
 		\includegraphics[width=0.99\textwidth]{diff_periods_combine.png}
 		\caption*{\small Figure X.}
 	\end{minipage}
+	\footnotesize
+	\emph{Graphs in the left column are plotted for the cases when the period of cell 2 is approximately 80\% of that of cell 1, and graphs in the right column are plotted for the cases when the period of cell 2 is approximately 95\% of that of cell 1. Graphs in the same row are plotted for cases with the same value of $F$. The first and second plot in each graph are the number of proteins in cytoplasm and mRNAs in nucleus. The third plot is the flow of protein. All are deterministic versions.}
 \end{figure}
 
-\begin{figure}[h]
+ Using the same method, we also study the case where two cells have different oscillating periods. The assumption is the following: the two cells are still identical, but they are put in different environment (e.g. there may be difference in temperature, pH, etc.). The influence is that the same pathway is processed at different rates in the two cells. Hence, the two cells have innately different circadian rhythms. To simply the setting, we fix one cell, as described above, and perturb the parameters of the other cell by some factor. We study how the flow of protein between the two cells can potentially synchronize the two innately different periods.
+
+ \begin{figure}[!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{sto_two_80_100_compare.png}
 		\caption*{\small Figure X.}
 	\end{minipage}
+	\footnotesize
+	\emph{Graphs are plotted for the stochastic version, with different values of $F.$ Cell 2 has a period of approximately 80\% of that of cell 1. The first and second plot in each graph are the number of proteins in cytoplasm and mRNAs in nucleus. The third plot is the flow of protein.}
 \end{figure}
 
+\textbf{Case 1:} The period of cell 2 is roughly 80\% of that of cell 1.
+
+The results from the deterministic version of the model is shown in Figure X(a), (b) and (c). Observe that when $F$ is small ($F=0.01,$ Figure X(a)), the two oscillations do not converge. Since the flow of protein, $p_c,$ shows some repeated patterns, we are assured that sufficient amount of reaction time is given, as the system has become steady. One interesting result is when $F$ is set to $0.1,$ as is shown in Figure X(b). In this situation, with the introduction of protein flow, the oscillations in both cells get killed, and it seems that the joint system has reached a steady state. However, detailed equilibrium analysis is needed to fully understand this situation. When $F$ is large ($F = 1$ in Figure X(c)), we can see that the two different periods are converging. Although the two paths are not perfectly aligned, they are indeed matched. The corresponding stochastic versions are plotted in Figure X(a), (b) and (c). Results are similar, as when $F$ is small, hardly can we see any convergence. If $F$ is large enough, it is obvious that synchronization is successful. Here notice that Figure X(b) and Figure X(b) have identical parameters, with F being $0.1.$ But the results are vastly different: in the stochastic model, the oscillations are not killed, but instead some medium level of synchronization can be observed.
 
 
 
-When $F$ is set to be $0.08,$ we can see that the synchronization becomes much faster. It only takes about 100 hours for the two cells to synchronize their oscillations. Also notice that the magnitude of the flow of proteins during synchronization is much larger than that in previous cases.
+\textbf{Case 2:} The period of cell 2 is roughly 95\% of that of cell 1.
 
+We expect that, if the innate difference between the two cells are small, then it should be easier to synchronize the two cells. Numerical results, as shown in Figure X(d), (e) and (f), confirm our expectation. Observe that in this case, $F=0.1$ would be large enough to generate a successful synchronization, while when $F=1,$ the synchronization is even faster.
 
-
-\textbf{Stochastic Version}\\
-\hspace{5mm} The stochastic version of this model yields similar results.
+Remark: If we compare the synchronization of identical cells with different initial states, with the synchronization of cells with innately different rhythms, we would see that the latter requires much faster flow of protein. In fact, $F$ needs to be at least 10 times larger, in order for cells with slightly different rhythms to get synchronized. This is intuitively clear, as synchronization of identical cells only requires the phases to be shifted, while synchronization of cells with different rhythms requires the flow of protein to fight against the original oscillation and transform the original rhythm.
 
 
 \subsection{Two cellular oscillators with direct diffusion (ECF)}

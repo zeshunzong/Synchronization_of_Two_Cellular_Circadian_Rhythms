@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 DEC 2018 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 DEC 2018 10:09
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -510,7 +510,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Non-PDF special ignored!
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <pathwa
-y.png, id=87, 613.8132pt x 395.076pt>
+y.png, id=95, 613.8132pt x 395.076pt>
 File: pathway.png Graphic file (type png)
 <use pathway.png>
 Package pdftex.def Info: pathway.png used on input line 65.
@@ -521,7 +521,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 71.
-[2 <./pathway.png>] [3] [4] [5] <two_cells.png, id=144, 1197.273pt x 394.5942pt
+[2 <./pathway.png>] [3] [4] [5] <two_cells.png, id=152, 1197.273pt x 394.5942pt
 >
 File: two_cells.png Graphic file (type png)
 <use two_cells.png>
@@ -592,7 +592,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 380--382
 
  []
 
-<PFAn.png, id=184, 466.74374pt x 383.18156pt>
+<PFAn.png, id=192, 466.74374pt x 383.18156pt>
 File: PFAn.png Graphic file (type png)
 <use PFAn.png>
 Package pdftex.def Info: PFAn.png used on input line 392.
@@ -607,151 +607,145 @@ Underfull \hbox (badness 10000) in paragraph at lines 401--403
 
  []
 
-[10 <./PFAn.png>] [11] <single_cell_show_convergence.png, id=200, 1124.2pt x 84
+[10 <./PFAn.png>] [11] <single_cell_show_convergence.png, id=208, 1124.2pt x 84
 3.15pt>
 File: single_cell_show_convergence.png Graphic file (type png)
 <use single_cell_show_convergence.png>
 Package pdftex.def Info: single_cell_show_convergence.png used on input line 43
 0.
 (pdftex.def)             Requested size: 250.41693pt x 187.80934pt.
-
-Overfull \hbox (15.8091pt too wide) in paragraph at lines 443--444
-[][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[12 <./single_cell_show_convergence.png (PNG copy)>] <single_oscillator_zoom_in
-.png, id=212, 1124.2pt x 843.15pt>
+<single_oscillator_zoom_in.png, id=209, 1124.2pt x 843.15pt>
 File: single_oscillator_zoom_in.png Graphic file (type png)
 <use single_oscillator_zoom_in.png>
-Package pdftex.def Info: single_oscillator_zoom_in.png used on input line 474.
+Package pdftex.def Info: single_oscillator_zoom_in.png used on input line 442.
 (pdftex.def)             Requested size: 202.6074pt x 151.95343pt.
-<sto_single_oscillator_zoom_in.png, id=213, 1124.2pt x 843.15pt>
+<sto_single_oscillator_zoom_in.png, id=210, 1124.2pt x 843.15pt>
 File: sto_single_oscillator_zoom_in.png Graphic file (type png)
 <use sto_single_oscillator_zoom_in.png>
 Package pdftex.def Info: sto_single_oscillator_zoom_in.png used on input line 4
-79.
+47.
 (pdftex.def)             Requested size: 202.6074pt x 151.95343pt.
-<single_oscillator_zoom_out.png, id=214, 1124.2pt x 843.15pt>
+<single_oscillator_zoom_out.png, id=211, 1124.2pt x 843.15pt>
 File: single_oscillator_zoom_out.png Graphic file (type png)
 <use single_oscillator_zoom_out.png>
-Package pdftex.def Info: single_oscillator_zoom_out.png used on input line 488.
+Package pdftex.def Info: single_oscillator_zoom_out.png used on input line 452.
 
 (pdftex.def)             Requested size: 202.6074pt x 151.95343pt.
-<sto_single_oscillator_zoom_out.png, id=215, 1124.2pt x 843.15pt>
+<sto_single_oscillator_zoom_out.png, id=212, 1124.2pt x 843.15pt>
 File: sto_single_oscillator_zoom_out.png Graphic file (type png)
 <use sto_single_oscillator_zoom_out.png>
 Package pdftex.def Info: sto_single_oscillator_zoom_out.png used on input line 
-493.
+457.
 (pdftex.def)             Requested size: 202.6074pt x 151.95343pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
-
+Overfull \hbox (15.8091pt too wide) in paragraph at lines 468--469
+[][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[13 <./single_oscillator_zoom_in.png (PNG copy)> <./sto_single_oscillator_zoom_
-in.png (PNG copy)>] <combined_results.png, id=244, 1668.4734pt x 1934.9088pt>
+[12 <./single_cell_show_convergence.png (PNG copy)>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 496.
+
+<combined_results.png, id=224, 1668.4734pt x 1934.9088pt>
 File: combined_results.png Graphic file (type png)
 <use combined_results.png>
-Package pdftex.def Info: combined_results.png used on input line 515.
+Package pdftex.def Info: combined_results.png used on input line 500.
 (pdftex.def)             Requested size: 495.82828pt x 574.98561pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<diff_periods_combine.png, id=245, 1669.437pt x 1454.5542pt>
-File: diff_periods_combine.png Graphic file (type png)
-<use diff_periods_combine.png>
-Package pdftex.def Info: diff_periods_combine.png used on input line 526.
-(pdftex.def)             Requested size: 495.82828pt x 431.99728pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<sto_two_80_100_compare.png, id=246, 925.056pt x 987.69pt>
-File: sto_two_80_100_compare.png Graphic file (type png)
-<use sto_two_80_100_compare.png>
-Package pdftex.def Info: sto_two_80_100_compare.png used on input line 535.
-(pdftex.def)             Requested size: 495.82828pt x 529.41115pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<SU.jpg, id=247, 1505.625pt x 752.8125pt>
-File: SU.jpg Graphic file (type jpg)
-<use SU.jpg>
-Package pdftex.def Info: SU.jpg used on input line 559.
-(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
-<SUEi.jpg, id=248, 1927.2pt x 975.645pt>
-File: SUEi.jpg Graphic file (type jpg)
-<use SUEi.jpg>
-Package pdftex.def Info: SUEi.jpg used on input line 568.
-(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-<SS.jpg, id=249, 1505.625pt x 752.8125pt>
-File: SS.jpg Graphic file (type jpg)
-<use SS.jpg>
-Package pdftex.def Info: SS.jpg used on input line 579.
-(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
-<SSEi.jpg, id=250, 1927.2pt x 975.645pt>
-File: SSEi.jpg Graphic file (type jpg)
-<use SSEi.jpg>
-Package pdftex.def Info: SSEi.jpg used on input line 588.
-(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-<UU.jpg, id=251, 1505.625pt x 752.8125pt>
-File: UU.jpg Graphic file (type jpg)
-<use UU.jpg>
-Package pdftex.def Info: UU.jpg used on input line 600.
-(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
-[14 <./single_oscillator_zoom_out.png (PNG copy)> <./sto_single_oscillator_zoom
-_out.png (PNG copy)>] <UUEi.jpg, id=257, 1927.2pt x 975.645pt>
-File: UUEi.jpg Graphic file (type jpg)
-<use UUEi.jpg>
-Package pdftex.def Info: UUEi.jpg used on input line 609.
-(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 615.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 615.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 615.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 615.
-
-<all_lambda_Ei.jpg, id=258, 1927.2pt x 975.645pt>
-File: all_lambda_Ei.jpg Graphic file (type jpg)
-<use all_lambda_Ei.jpg>
-Package pdftex.def Info: all_lambda_Ei.jpg used on input line 621.
-(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 647.
-[15] [16 <./combined_results.png
+[13 <./single_oscillator_zoom_in.png (PNG copy)> <./sto_single_oscillator_zoom_
+in.png (PNG copy)> <./single_oscillator_zoom_out.png (PNG copy)> <./sto_single_
+oscillator_zoom_out.png (PNG copy)>] [14 <./combined_results.png
 
 pdfTeX warning: pdflatex (file ./combined_results.png): large interlaced PNG mi
 ght cause out of memory (use non-interlaced PNG to fix this)
->] [17 <./diff_periods_combine.png>] [18 <./sto_two_80_100_compare.png>] [19 <.
-/SU.jpg> <./SUEi.jpg>] [20 <./SS.jpg> <./SSEi.jpg>] [21 <./UU.jpg> <./UUEi.jpg>
-] [22 <./all_lambda_Ei.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 647.
+>] [15] <diff_periods_combine.png, id=264, 1669.437pt x 1454.5542pt>
+File: diff_periods_combine.png Graphic file (type png)
+<use diff_periods_combine.png>
+Package pdftex.def Info: diff_periods_combine.png used on input line 532.
+(pdftex.def)             Requested size: 495.82828pt x 431.99728pt.
+[16 <./diff_periods_combine.png>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 541.
+
+<sto_two_80_100_compare.png, id=271, 925.056pt x 987.69pt>
+File: sto_two_80_100_compare.png Graphic file (type png)
+<use sto_two_80_100_compare.png>
+Package pdftex.def Info: sto_two_80_100_compare.png used on input line 545.
+(pdftex.def)             Requested size: 495.82828pt x 529.41115pt.
+[17 <./sto_two_80_100_compare.png>] <SU.jpg, id=278, 1505.625pt x 752.8125pt>
+File: SU.jpg Graphic file (type jpg)
+<use SU.jpg>
+Package pdftex.def Info: SU.jpg used on input line 573.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<SUEi.jpg, id=279, 1927.2pt x 975.645pt>
+File: SUEi.jpg Graphic file (type jpg)
+<use SUEi.jpg>
+Package pdftex.def Info: SUEi.jpg used on input line 582.
+(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
+<SS.jpg, id=280, 1505.625pt x 752.8125pt>
+File: SS.jpg Graphic file (type jpg)
+<use SS.jpg>
+Package pdftex.def Info: SS.jpg used on input line 593.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+[18 <./SU.jpg>] <SSEi.jpg, id=287, 1927.2pt x 975.645pt>
+File: SSEi.jpg Graphic file (type jpg)
+<use SSEi.jpg>
+Package pdftex.def Info: SSEi.jpg used on input line 602.
+(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
+<UU.jpg, id=288, 1505.625pt x 752.8125pt>
+File: UU.jpg Graphic file (type jpg)
+<use UU.jpg>
+Package pdftex.def Info: UU.jpg used on input line 614.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<UUEi.jpg, id=289, 1927.2pt x 975.645pt>
+File: UUEi.jpg Graphic file (type jpg)
+<use UUEi.jpg>
+Package pdftex.def Info: UUEi.jpg used on input line 623.
+(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 629.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lambda' on input line 629.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 629.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 629.
+
+<all_lambda_Ei.jpg, id=290, 1927.2pt x 975.645pt>
+File: all_lambda_Ei.jpg Graphic file (type jpg)
+<use all_lambda_Ei.jpg>
+Package pdftex.def Info: all_lambda_Ei.jpg used on input line 635.
+(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 661.
+[19 <./SUEi.jpg> <./SS.jpg>] [20 <./SSEi.jpg> <./UU.jpg>] [21 <./UUEi.jpg> <./a
+ll_lambda_Ei.jpg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 661.
 (./Final_Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 647.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 647.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 661.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 661.
 Package rerunfilecheck Info: File `Final_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 942B67C1F7F31E7B1301AC47E1DE109E;1484.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 647.
+(rerunfilecheck)             Checksum: 5F665E14C333E30361245B00EDBF637D;1684.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 661.
  ) 
 Here is how much of TeX's memory you used:
- 10582 strings out of 492995
- 158057 string characters out of 6132704
- 268816 words of memory out of 5000000
- 13834 multiletter control sequences out of 15000+600000
- 15227 words of font info for 58 fonts, out of 8000000 for 9000
+ 10596 strings out of 492995
+ 158233 string characters out of 6132704
+ 267816 words of memory out of 5000000
+ 13843 multiletter control sequences out of 15000+600000
+ 17145 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,15n,42p,1075b,1626s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,15n,42p,1374b,1626s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -766,15 +760,13 @@ exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Final_Paper.pdf (22 pages, 5330226 bytes).
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Final_Paper.pdf (21 pages, 5352830 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 320 compressed objects within 4 object streams
+ 395 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
  136 named destinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
-
-tinations out of 1000 (max. 500000)
- 235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 
