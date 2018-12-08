@@ -264,7 +264,7 @@ This sheds some light on how the parameters shall be chosen.
 \end{equation}
 Here the superscripts $1$ and $2$ indicate cell 1 and cell 2.
 
-Observe that although this method is simple and concise, it has a limitation that it can only be applied in the case when the two cells are identical in volume. When the volumes are different, it is the concentration, instead of the number of molecules that shall be considered. Also, communicating ``information'' among cells of a multi-cellular organism are usually through a media called extra-cellular fluid rather than a direct diffusion among cells. Hence some alternative methods are discussed below.
+Observe that although this method is simple and concise, it has a limitation that it can only be applied in the case when the two cells are identical in volume. When the volumes are different, it is the concentration, instead of the number of molecules that shall be considered. More importantly, to build a three-cell system we need to build three pipes connecting each of them, and to build a four-cell system we need six pipes. For a system consisting of more than hundreds of cells this method is obviously inefficient and unrealistic. Hence, communicating ``information'' among cells of a multi-cellular organism are usually through a media called extra-cellular fluid rather than a direct diffusion among cells. Some alternative methods are discussed below.
 
 \subsubsection{Direct Diffusion with ECF}
 \hspace{5mm} ECF stands for extra-cellular fluid, by which cells live and communicate ``information'' with each other. We consider the case where, instead of connecting two cells with a pipe directly, there are only pipes between each cell and ECF. It means that, every time a protein molecule would like to go from one cell to another, it must go through ECF as a transportation media. \\
@@ -564,27 +564,41 @@ Remark: If we compare the synchronization of identical cells with different init
 
 \subsection{Two cellular oscillators with direct diffusion (ECF)}
 
-\subsubsection{Stable to Unstable}
-
-\begin{figure}[ht]
-    \centering
-	\begin{minipage}{0.99\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{SU.jpg}
-		\caption*{\small Figure}
-	\end{minipage}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-	\begin{minipage}{0.99\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{SUEi.jpg}
-		\caption*{\small Figure}
-	\end{minipage}
-\end{figure}
+\subsubsection{Unstable to Stable}
 
 \subsubsection{Stable to Stable}
+
+\subsubsection{Unstable to Unstable}
+
+\subsubsection{Set of Eigenvalues with changing $\lambda_{ECF}$}
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{US.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{USEi.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{US_M.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
 
 \begin{figure}[ht]
     \centering
@@ -604,8 +618,15 @@ Remark: If we compare the synchronization of identical cells with different init
 	\end{minipage}
 \end{figure}
 
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{SS_M.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
 
-\subsubsection{Unstable to Unstable}
 
 \begin{figure}[ht]
     \centering
@@ -625,14 +646,79 @@ Remark: If we compare the synchronization of identical cells with different init
 	\end{minipage}
 \end{figure}
 
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{UU_M.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
 
-\subsubsection{Set of Eigenvalues with changing $\lambda_{ECF}$}
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{UU_10.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
 
 \begin{figure}[ht]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{all_lambda_Ei.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{all_lambda_Ei2.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{PF_US.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{PF_UU.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{PF_UU_4.jpg}
+		\caption*{\small Figure}
+	\end{minipage}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+	\begin{minipage}{0.99\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{PF_UU_10.jpg}
 		\caption*{\small Figure}
 	\end{minipage}
 \end{figure}

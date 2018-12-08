@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 DEC 2018 10:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 DEC 2018 21:20
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -676,73 +676,121 @@ File: sto_two_80_100_compare.png Graphic file (type png)
 <use sto_two_80_100_compare.png>
 Package pdftex.def Info: sto_two_80_100_compare.png used on input line 545.
 (pdftex.def)             Requested size: 495.82828pt x 529.41115pt.
-[17 <./sto_two_80_100_compare.png>] <SU.jpg, id=278, 1505.625pt x 752.8125pt>
-File: SU.jpg Graphic file (type jpg)
-<use SU.jpg>
-Package pdftex.def Info: SU.jpg used on input line 573.
+[17 <./sto_two_80_100_compare.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 573.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lambda' on input line 573.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 573.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 573.
+
+<US.jpg, id=278, 1505.625pt x 752.8125pt>
+File: US.jpg Graphic file (type jpg)
+<use US.jpg>
+Package pdftex.def Info: US.jpg used on input line 579.
 (pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
-<SUEi.jpg, id=279, 1927.2pt x 975.645pt>
-File: SUEi.jpg Graphic file (type jpg)
-<use SUEi.jpg>
-Package pdftex.def Info: SUEi.jpg used on input line 582.
-(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-<SS.jpg, id=280, 1505.625pt x 752.8125pt>
+<USEi.jpg, id=279, 843.15pt x 632.3625pt>
+File: USEi.jpg Graphic file (type jpg)
+<use USEi.jpg>
+Package pdftex.def Info: USEi.jpg used on input line 588.
+(pdftex.def)             Requested size: 400.66862pt x 300.50075pt.
+<US_M.jpg, id=280, 1505.625pt x 752.8125pt>
+File: US_M.jpg Graphic file (type jpg)
+<use US_M.jpg>
+Package pdftex.def Info: US_M.jpg used on input line 597.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<SS.jpg, id=281, 1505.625pt x 752.8125pt>
 File: SS.jpg Graphic file (type jpg)
 <use SS.jpg>
-Package pdftex.def Info: SS.jpg used on input line 593.
+Package pdftex.def Info: SS.jpg used on input line 607.
 (pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
-[18 <./SU.jpg>] <SSEi.jpg, id=287, 1927.2pt x 975.645pt>
+<SSEi.jpg, id=282, 843.15pt x 632.3625pt>
 File: SSEi.jpg Graphic file (type jpg)
 <use SSEi.jpg>
-Package pdftex.def Info: SSEi.jpg used on input line 602.
-(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-<UU.jpg, id=288, 1505.625pt x 752.8125pt>
+Package pdftex.def Info: SSEi.jpg used on input line 616.
+(pdftex.def)             Requested size: 400.66862pt x 300.50075pt.
+<SS_M.jpg, id=283, 1505.625pt x 752.8125pt>
+File: SS_M.jpg Graphic file (type jpg)
+<use SS_M.jpg>
+Package pdftex.def Info: SS_M.jpg used on input line 625.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<UU.jpg, id=284, 1505.625pt x 752.8125pt>
 File: UU.jpg Graphic file (type jpg)
 <use UU.jpg>
-Package pdftex.def Info: UU.jpg used on input line 614.
+Package pdftex.def Info: UU.jpg used on input line 635.
 (pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
-<UUEi.jpg, id=289, 1927.2pt x 975.645pt>
+<UUEi.jpg, id=285, 843.15pt x 632.3625pt>
 File: UUEi.jpg Graphic file (type jpg)
 <use UUEi.jpg>
-Package pdftex.def Info: UUEi.jpg used on input line 623.
-(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 629.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 629.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 629.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 629.
-
-<all_lambda_Ei.jpg, id=290, 1927.2pt x 975.645pt>
+Package pdftex.def Info: UUEi.jpg used on input line 644.
+(pdftex.def)             Requested size: 400.66862pt x 300.50075pt.
+<UU_M.jpg, id=286, 1505.625pt x 752.8125pt>
+File: UU_M.jpg Graphic file (type jpg)
+<use UU_M.jpg>
+Package pdftex.def Info: UU_M.jpg used on input line 653.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<UU_10.jpg, id=287, 1505.625pt x 752.8125pt>
+File: UU_10.jpg Graphic file (type jpg)
+<use UU_10.jpg>
+Package pdftex.def Info: UU_10.jpg used on input line 662.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<all_lambda_Ei.jpg, id=288, 1927.2pt x 975.645pt>
 File: all_lambda_Ei.jpg Graphic file (type jpg)
 <use all_lambda_Ei.jpg>
-Package pdftex.def Info: all_lambda_Ei.jpg used on input line 635.
+Package pdftex.def Info: all_lambda_Ei.jpg used on input line 671.
 (pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 661.
-[19 <./SUEi.jpg> <./SS.jpg>] [20 <./SSEi.jpg> <./UU.jpg>] [21 <./UUEi.jpg> <./a
-ll_lambda_Ei.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 661.
+<all_lambda_Ei2.jpg, id=289, 1927.2pt x 975.645pt>
+File: all_lambda_Ei2.jpg Graphic file (type jpg)
+<use all_lambda_Ei2.jpg>
+Package pdftex.def Info: all_lambda_Ei2.jpg used on input line 680.
+(pdftex.def)             Requested size: 400.66862pt x 202.83707pt.
+<PF_US.jpg, id=290, 1505.625pt x 752.8125pt>
+File: PF_US.jpg Graphic file (type jpg)
+<use PF_US.jpg>
+Package pdftex.def Info: PF_US.jpg used on input line 691.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<PF_UU.jpg, id=291, 1505.625pt x 752.8125pt>
+File: PF_UU.jpg Graphic file (type jpg)
+<use PF_UU.jpg>
+Package pdftex.def Info: PF_UU.jpg used on input line 701.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<PF_UU_4.jpg, id=292, 1505.625pt x 752.8125pt>
+File: PF_UU_4.jpg Graphic file (type jpg)
+<use PF_UU_4.jpg>
+Package pdftex.def Info: PF_UU_4.jpg used on input line 711.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+<PF_UU_10.jpg, id=293, 1505.625pt x 752.8125pt>
+File: PF_UU_10.jpg Graphic file (type jpg)
+<use PF_UU_10.jpg>
+Package pdftex.def Info: PF_UU_10.jpg used on input line 721.
+(pdftex.def)             Requested size: 400.66862pt x 200.3329pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 747.
+[18] [19 <./US.jpg> <./USEi.jpg>] [20 <./US_M.jpg> <./SS.jpg>] [21 <./SSEi.jpg>
+ <./SS_M.jpg>] [22 <./UU.jpg> <./UUEi.jpg>] [23 <./UU_M.jpg> <./UU_10.jpg>] [24
+ <./all_lambda_Ei.jpg> <./all_lambda_Ei2.jpg>] [25 <./PF_US.jpg> <./PF_UU.jpg>]
+[26 <./PF_UU_4.jpg> <./PF_UU_10.jpg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 747.
 (./Final_Paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 661.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 661.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 747.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 747.
 Package rerunfilecheck Info: File `Final_Paper.out' has not changed.
-(rerunfilecheck)             Checksum: 5F665E14C333E30361245B00EDBF637D;1684.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 661.
+(rerunfilecheck)             Checksum: 3F44D2538E28F091482B052A6A7CAC1C;1684.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 747.
  ) 
 Here is how much of TeX's memory you used:
- 10596 strings out of 492995
- 158233 string characters out of 6132704
+ 10655 strings out of 492995
+ 159052 string characters out of 6132704
  267816 words of memory out of 5000000
- 13843 multiletter control sequences out of 15000+600000
+ 13879 multiletter control sequences out of 15000+600000
  17145 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,15n,42p,1374b,1626s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -763,10 +811,14 @@ ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 17/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 7/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Final_Paper.pdf (21 pages, 5352830 bytes).
+Output written on Final_Paper.pdf (26 pages, 6221537 bytes).
 PDF statistics:
- 395 PDF objects out of 1000 (max. 8388607)
- 327 compressed objects within 4 object streams
- 136 named destinations out of 1000 (max. 500000)
- 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 437 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
+
+treams
+ 150 named destinations out of 1000 (max. 500000)
+ 296 words of extra memory for PDF output out of 10000 (max. 10000000)
 
