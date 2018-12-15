@@ -40,12 +40,12 @@
 
 \maketitle
 \begin{abstract}
-ABSTRACT
+Interested in how life keeps its circadian rhythm, we construct a simple model that allows us to study the synchronization process, in which the exchange of protein molecules is chosen to be a representative of the information exchange between cells. We first consider the elementary case where two cells are connected by an imaginary pipe, and we have shown that it is easy to synchronize cells with same period but different initial phases, while it is harder, but still possible, to synchronize cells with innately different periods. To allow protein exchange between more than two cells, we also construct a model involving extra-cellular fluid. Cells are put in the solution, and concentrations of protein in cells as well as concentration in the solution are allowed to balance each other. Similar results of synchronization are obtained. Some stability analyses are performed to reveal when and how the synchronization will succeed. We also perform the corresponding stochastic version of modelling for some simple cases. At the very end, we discuss a modification of the ECF model -- ECF with the addition of positive feedback, which mimics the process of endocytosis and exocytosis.
 \end{abstract}
 
 \section{Introduction}
 
-\hspace{5mm} Almost all animals have innate biological clock that controls various timing inside the body. Negative feedback of gene expression is one typical generator for a mammalian circadian clock. One simple model of the circadian rhythm is to consider the clock gene expression in a particular cell. This has been shown in Wang and Peskin's work. Building upon their work, we investigate the coupling of two cells with different periods, and study the possible interactions among them.
+\hspace{5mm} Almost all animals have innate biological clock that controls various timing inside the body. Negative feedback of gene expression is one typical generator for a mammalian circadian clock. One simple model of the circadian rhythm is to consider the clock gene expression in a particular cell. This has been shown in Wang and Peskin's work.[1] Building upon their work, we investigate the coupling of two cells with different periods, and study the possible interactions among them.
 
 The model for one cellular circadian oscillator consists of the following: the mRNA and the corresponding proteins encoded by the gene. First, mRNA molecules are synthesized through transcription and enter the cytoplasm. Then, protein molecules are generated in the cytoplasm through translation. Some protein molecules will enter the nucleus and bind to some activating transcription factor on the DNA, thus inhibiting the transcription. This provides a negative feedback that can lean to oscillations in the amount of substances in the cell, provided the parameters are well-chosen.
 
@@ -55,7 +55,7 @@ In the rest of the paper, we first use the deterministic version to find suitabl
 
 \section{Mathematical Modeling}
 \subsection{A Simple Cellular Circadian Oscillator}
-\hspace{5mm} We construct a four-variable model to simulate the mammalian circadian clock in a cell. This is achieved by the expression of clock gene, e.g. the clock gene \textit{per} in \textit{Drosophila}.
+\hspace{5mm} We construct a four-variable model to simulate the mammalian circadian clock in a cell. This is achieved by the expression of clock gene, e.g. the clock gene \textit{per} in \textit{Drosophila}.[1]
 
 The pathway is shown in Figure 1. The \textit{per} gene is transcribed into \textit{Per} mRNAs in the nucleus, which are then exported to the cytoplasm to be translated to PER protein and to degrade. Some PER proteins enter the nucleus where they inhibit the transcription of the \textit{per} gene and degrade in the nucleus. We assume that the PER proteins inhibit the transcription by binding to the DNA molecules on several pre-determined sites. The transcription continues if and only if none of the sites are occupied.
 
@@ -63,7 +63,7 @@ The pathway is shown in Figure 1. The \textit{per} gene is transcribed into \tex
 \begin {figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{pathway.png}
-	\caption*{\small Figure 1: a schematic cellular clock}
+	\caption*{\small Figure 1: A schematic cellular clock}
 \end {figure}
 
 The variables and parameters that describe the process is the following:
@@ -83,7 +83,7 @@ The variables and parameters that describe the process is the following:
 	\item $V_n$: the volume of the nucleus.
 \end{itemize}
 
-Using the above notations, we can define the six reactions involved in the model in Table 1. One remark is that the rate of transcription is $\alpha \{\frac{K}{K + p_n / V_n}\}^r.$ We can think of $\frac{K}{K + p_n / V_n}$ as the possibility that one particular site is not occupied, so it being raised to $r^\text{th}$ power is the probability that all sites are not occupied. The deduction of this expression can be found in Wang and Peskin's work.
+Using the above notations, we can define the six reactions involved in the model in Table 1. One remark is that the rate of transcription is $\alpha \{\frac{K}{K + p_n / V_n}\}^r.$ We can think of $\frac{K}{K + p_n / V_n}$ as the possibility that one particular site is not occupied, so its being raised to $r^\text{th}$ power is the probability that all sites are not occupied. The deduction of this expression can be found in Wang and Peskin's work.[1]
 
 \begin{table}[t]
 \begin{tabular}{|l|l|l|l|}
@@ -100,7 +100,7 @@ Reaction  & Reaction Name                            & Rate (Probability)       
 \end{table}
 The model consists of two versions.
 \subsubsection{Deterministic Version}
-\hspace{5mm} If we view the number of molecules of each substance as large numbers, the fact that them being integers will have little influence on the model. In this way, we can set up the model using differential equations. Notice that the rate of change of the amount of one substance is equal to the rate that it is produced (imported) minus the rate that it is degraded (exported). This gives us the following:
+\hspace{5mm} If we view the number of molecules of each substance as large numbers, then the fact that they are integers will have little influence on the model. In this way, we can set up the model using differential equations. Notice that the rate of change of the amount of one substance is equal to the rate that it is produced (imported) minus the rate that it is degraded (exported). This gives us the following equations:
 \begin{equation}
 	\frac{dm_n}{dt} = \alpha \{\frac{K}{K + p_n / V_n}\}^r - \delta_m m_n,
 \end{equation}
@@ -230,7 +230,7 @@ We claim that the best case for oscillation is that
 \begin{equation}
     \gamma_m = \delta_m = \gamma_p = \delta_p = \nu,
 \end{equation}
-in the sense that they generate oscillation with the smallest $G.$ Proof of this claim can be found in Peskin's work [1]. Now, it follows from (24) that
+in the sense that they generate oscillation with the smallest $G.$ Proof of this claim can be found in Peskin's work. [2] Now, it follows from (24) that
 \begin{align}
     0 &= (\lambda + \nu)^4 + G \nu ^4 \\
     (\lambda + \nu)^4 &= -G \nu ^4 \\
@@ -240,7 +240,7 @@ in the sense that they generate oscillation with the smallest $G.$ Proof of this
 We see that there are four solutions to $\lambda$ and each is a complex number. In order for the system of ODEs (20) to have oscillating solutions, the real part of at least one $\lambda$ must be greater than $0.$ This implies that $G^\frac{1}{4} > \sqrt{2},$ or equivalently, $G>4.$ By (27), \begin{equation}
     \left(\frac{p_n^0}{k+p_n^0}\right) r > 4.
 \end{equation}
-Since $ \left(\frac{p_n^0}{k+p_n^0}\right) < 1,$ it must be that $r\geq 5.$ Setting $r=5$ and Substituting this into the steady state equation, with some simple algebra we have
+Since $ \left(\frac{p_n^0}{k+p_n^0}\right) < 1,$ it must be that $r\geq 5.$ Setting $r=5$ and substituting this into the steady state equation, with some simple algebra we have
 \begin{equation}
     \alpha \beta > \nu^2 k \cdot 4(1+4)^5.
 \end{equation}
@@ -255,16 +255,16 @@ This sheds some light on how the parameters shall be chosen.
 \end {figure}
 
 \subsubsection{Direct flow of protein}
-\hspace{5mm} This is the easiest version. Assume there is a pipe connecting the two cells and these two cells have the same volume. Protein molecules in one cell can move to the other cell through the pipe. The speed of diffusion is proportional to the difference in the number of protein molecules in the two cells, i.e.
+\hspace{5mm} This is the easiest version. Assume that there is a pipe connecting the two cells and these two cells have the same volume. Protein molecules in one cell can move to the other cell through the pipe. The speed of diffusion is proportional to the difference in the number of protein molecules in the two cells, i.e.
 \begin{equation}
 	\frac{d {p_c^1}}{dt} = -F ({p_c^1 - p_c^2}),
 \end{equation}
 \begin{equation}
 	\frac{d {p_c^2}}{dt} = -\frac{d {p_c^1}}{dt}.
 \end{equation}
-Here the superscripts $1$ and $2$ indicate cell 1 and cell 2.
+Here the superscripts $1$ and $2$ indicate cell 1 and cell 2, and $F$ is a constant.
 
-Observe that although this method is simple and concise, it has a limitation that it can only be applied in the case when the two cells are identical in volume. When the volumes are different, it is the concentration, instead of the number of molecules that shall be considered. More importantly, to build a three-cell system we need to build three pipes connecting each of them, and to build a four-cell system we need six pipes. For a system consisting of more than hundreds of cells this method is obviously inefficient and unrealistic. Hence, communicating ``information'' among cells of a multi-cellular organism are usually through a media called extra-cellular fluid rather than a direct diffusion among cells. Some alternative methods are discussed below.
+Observe that although this method is simple and concise, it has a limitation in the sense that it can only be applied in the case when the two cells are identical in volume. When the volumes are different, it is the concentration, instead of the number of molecules that shall be considered. More importantly, to build a three-cell system we need to build three pipes connecting each of them, and to build a four-cell system we need six pipes. For a system consisting of more than hundreds of cells this method is obviously inefficient and unrealistic. Hence, communicating ``information'' among cells of a multi-cellular organism are usually through a media called extra-cellular fluid rather than a direct diffusion through pipes. Some alternative methods are discussed below.
 
 \subsubsection{Direct Diffusion with ECF}
 \hspace{5mm} ECF stands for extra-cellular fluid, by which cells live and communicate ``information'' with each other. We consider the case where, instead of connecting two cells with a pipe directly, there are only pipes between each cell and ECF. It means that, every time a protein molecule would like to go from one cell to another, it must go through ECF as a transportation media. \\
@@ -321,7 +321,7 @@ With the dynamical system described above, we do analysis on stability of this s
 
 where $a^{(i)} = -\frac{\alpha^{(i)} r^{(i)}}{V_n^{(i)} K^{(i)}} \{\frac{K^{(i)}}{K^{(i)} + P_n^{(i)0}}\}^{r^{(i)} + 1}$. \\
 
-At this point, in order to simplify this dynamical system for the sake of stability analysis and, meanwhile, to keep interesting features of the system, we do the followings: \\
+At this point, in order to simplify this dynamical system for the sake of stability analysis and, meanwhile, to maintain interesting features of the system, we do the followings: \\
 \begin{itemize}
     \item Let n = 2, and
     \item let $\gamma_m^{(i)} = \gamma_p^{(i)} = \delta_m^{(i)} = \delta_p^{(i)} = \lambda^{(i)}$ for $i \in \{1, 2\}$.
@@ -355,7 +355,7 @@ $
 
 \end{center}
 
-, $X^T =
+ $X^T =
 \begin{bmatrix}
 \widetilde{M_n^{(1)}} &
 \widetilde{M_c^{(1)}} &
@@ -390,7 +390,7 @@ In light of this, we propose the next model -- \textit{Positive Feedback Transpo
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{PFAn.png}
-		\caption*{\small Figure X: Animation of PFT}
+		\caption*{\small Figure 3: Animation of PFT}
 	\end{minipage}
 
 \end{figure}
@@ -422,13 +422,13 @@ To formalize this idea, we need to introduce more parameters in order to describ
 \subsection{A Single Cellular Oscillator}
 \hspace{5mm} Throughout the section we will use the amount of $m_n$, mRNAs in nucleus, to draw results and conclusions about circadian oscillations.
 
-We first show the results of one cellular oscillator. The parameters are chosen as following: $r = 5,$ $k= 200,$ $\alpha = 100000,$ $\beta = 10,$ $\nu = \gamma_m = \gamma_p = \delta_m =\delta_p = 0.285599.$ Here $\nu$ is chosen to be $0.285599$ as this would give an oscillator whose period is close to 24 hours. $r$ is chosen to be the smallest possible value that allows the model to work. $\alpha, \beta$ and $k$ are chosen as such that realistic case is mimicked and equation (34) holds. Initial values of $p_n, p_c, m_n$ and $m_c$ do not play an critical role in the oscillation. In fact, as long as the initial values are not set to extremely large or small numbers, given sufficiently long time, the system will settle itself down and converge to a periodic oscillation, with $p_n, p_c, m_n$ and $m_c$ each fluctuating around roughly $1200, 1200, 40$ and $35,$ respectively. For example, a graph plotting the number of molecules of each substance, with the initial state set to $p_n = 500, p_c = 500, m_n = 500$ and $m_c = 500$, is shown in Figure X.
+We first show the results of one cellular oscillator. The parameters are chosen as following: $r = 5,$ $k= 200,$ $\alpha = 100000,$ $\beta = 10,$ $\nu = \gamma_m = \gamma_p = \delta_m =\delta_p = 0.285599.$ Here $\nu$ is chosen to be $0.285599$ as this would give an oscillator whose period is close to 24 hours. $r$ is chosen to be the smallest possible value that allows the model to work. $\alpha, \beta$ and $k$ are chosen as such that realistic case is mimicked and equation (34) holds. Initial values of $p_n, p_c, m_n$ and $m_c$ do not play an critical role in the oscillation. In fact, as long as the initial values are not set to extremely large or small numbers, given sufficiently long time, the system will settle itself down and converge to a periodic oscillation, with $p_n, p_c, m_n$ and $m_c$ each fluctuating around roughly $1200, 1200, 40$ and $35,$ respectively. For example, a graph plotting the number of molecules of each substance, with the initial state set to $p_n = 500, p_c = 500, m_n = 500$ and $m_c = 500$, is shown in Figure 4.
 \begin{figure}[h]
     \centering
 	\begin{minipage}{0.5\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{single_cell_show_convergence.png}
-		\caption*{\small Figure X: Convergence to oscillation ultimately.}
+		\caption*{\small Figure 4: Convergence to oscillation ultimately.}
 	\end{minipage}
 
 \end{figure}
@@ -440,27 +440,27 @@ It can be seen that after about 150 hours of reaction, the system converges to t
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_in.png}
-		\caption*{\small Figure X: Deterministic version, up to $t=40.$}
+		\caption*{\small Figure 5(a): Deterministic version, up to $t=40.$}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_in.png}
-		\caption*{\small Figure X: Stochastic version, up to $t=40.$}
+		\caption*{\small Figure 5(c): Stochastic version, up to $t=40.$}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{single_oscillator_zoom_out.png}
-		\caption*{\small Figure X: Deterministic version, up to $t=150.$}
+		\caption*{\small Figure 5(b): Deterministic version, up to $t=150.$}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\centering
 		\includegraphics[width=0.89\textwidth]{sto_single_oscillator_zoom_out.png}
-		\caption*{\small Figure X: Stochastic version, up to $t=150.$}
+		\caption*{\small Figure 5(d): Stochastic version, up to $t=150.$}
 	\end{minipage}
 
 \end{figure}
 
-Using the above specification, two types of simulation, the deterministic version as well as the stochastic version, are both implemented. As mentioned above, the deterministic version is described by equations (5)-(8). The stochastic version is described by the last column in Table 1. A code snippet is shown below.
+Using the above specification, two types of simulation, the deterministic version as well as the stochastic version, are both implemented. As mentioned above, the deterministic version is described by equations (5)-(8). The stochastic version is described by the last column in Table 1. A code snippet for the stochastic version is shown below.
 
 \begin{lstlisting}
     [Tmin, kmin] = min(T);
@@ -498,28 +498,28 @@ Using the above specification, two types of simulation, the deterministic versio
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{combined_results.png}
-		\caption*{\small Figure X. Two identical cells with different initial states.}
+		\caption*{\small Figure 6. Two identical cells with different initial states.}
 	\end{minipage}
 	\footnotesize
 	\emph{Graphs on the left column are deterministic versions. Graphs on the right column are stochastic versions. Graphs on the same row are plotted for models with the same value of $F.$ The first and second plot in each graph are the number of proteins in cytoplasm and mRNAs in nucleus. The third plot is the flow of protein. Observe that each two graphs in the same row look similar.}
 \end{figure}
 
-Results from both versions are plotted in Figure X. The numbers of molecules of each substance are plotted in each figure. (a)-(d) are deterministic version, whose reaction times are set to 40 hours and 150 hours, respectively. Figure (e)-(h) are stochastic version, which are stair-case functions, whose reaction times are set to 40 hours and 150 hours, respectively. Observe that the results from the stochastic version resemble those from the deterministic version. Both versions show an oscillating period of about 24 hours. This confirms our expectation.
+Results from both versions are plotted in Figure 5. The numbers of molecules of each substance are plotted in each figure. (a) and (b) are deterministic version, whose reaction times are set to 40 hours and 150 hours, respectively. (c) and (d) are stochastic version, which are stair-case functions, whose reaction times are set to 40 hours and 150 hours, respectively. Observe that the results from the stochastic version resemble those from the deterministic version. Both versions show an oscillating period of about 24 hours. This confirms our expectation.
 
 
 \subsection{Two cellular oscillators with direct flow of protein}
 \subsubsection{Two cells with only phase difference}
-\hspace{5mm} We use the direct flow of protein molecules, described in equations (35) and (36), to examine how two cells can synchronize their oscillations. Consider two identical cells, each of which has a circadian oscillation discussed above, whose only difference is the initial state. We manually set the initial state of the first cell to be $p^1_n = 925, p^1_c = 730, m^1_n = 32$ and $m^1_c = 21,$ and the initial state of the second cell to be $p^2_n = 1403, p^2_c = 1670, m^2_n = 33$ and $m^2_c = 48.$ These values are chosen such at both cells fall in regular oscillating cycles, and that $p^1_c$ starts at its nadir and $p^2_c$ starts at its zenith. Equivalently, the two oscillations in the two cells have a phase difference of $\frac{1}{2}T,$ with $T$ being the common period.
+\hspace{5mm} We use the direct flow of protein molecules through a pipe, described in equations (35) and (36), to examine how two cells can synchronize their oscillations. Consider two identical cells, each of which has a circadian oscillation discussed above, whose only difference is the initial state. We manually set the initial state of the first cell to be $p^1_n = 925, p^1_c = 730, m^1_n = 32$ and $m^1_c = 21,$ and the initial state of the second cell to be $p^2_n = 1403, p^2_c = 1670, m^2_n = 33$ and $m^2_c = 48.$ These values are chosen such at both cells fall in regular oscillating cycles, and that $p^1_c$ starts at its nadir and $p^2_c$ starts at its zenith. Equivalently, the two oscillations in the two cells have a phase difference of $\frac{1}{2}T,$ with $T$ being the common period.
 
-Imagine that the two cells are connected by a pipe and there is a valve, represented by the value of $F$ in our model. If the valve is shut down, or $F=0,$ then obviously there is no flow of protein between the two cells. The two cells would each follow its individual circadian rhythm, so the phase difference of $\frac{1}{2}T$ would be eternally kept, regardless of how long the reactions have happened. This is demonstrated in Figure X(a). Observe that the flow of protein is constantly zero and the oscillations in each cell are not interacting at all with each other.
-
-
-Next we open the valve a little bit, by setting $F = 0.01.$ $p_c$ and $m_n$ in each cell, and the flow protein across time are plotted in Figure X(b). We can see that although the phase difference is large at the beginning, the flow of protein drags the two oscillations together so that in approximately 100 hours, the phase difference almost gets eliminated and the two cells run on a shared, synchronized circadian rhythm. Also notice that the flow of protein gradually damps down as the two oscillations gradually converge.
+Imagine that the two cells are connected by a pipe and there is a valve, represented by the value of $F$ in our model. If the valve is shut down, or $F=0,$ then obviously there is no flow of protein between the two cells. The two cells would each follow its individual circadian rhythm, so the phase difference of $\frac{1}{2}T$ would be eternally kept, regardless of how long the reactions have happened. This is demonstrated in Figure 6(a). Observe that the flow of protein is constantly zero and the oscillations in each cell are not interacting at all with each other.
 
 
-It is natural to expect that, if faster flow is allowed, the convergence would also be faster. Results from modeling with $F = 0.02$ and $F=0.08$ are plotted in Figure X(c) and (d), and they confirm our expectation. When $F$ is set to be $0.02,$ after about 500 hours of synchronization, the phase difference becomes indiscernible. When $F$ is set to be $0.08,$ we can see that the synchronization becomes much faster. It only takes about 100 hours for the two cells to synchronize their oscillations. Also notice that the magnitude of the flow of proteins during synchronization is much larger than that in previous cases.
+Next we open the valve a little bit, by setting $F = 0.01.$ $p_c$ and $m_n$ in each cell, and the flow protein across time are plotted in Figure 6(b). We can see that although the phase difference is large at the beginning, the flow of protein drags the two oscillations together so that after approximately 1000 hours, the phase difference almost gets eliminated and the two cells run on a shared, synchronized circadian rhythm. Also notice that the flow of protein gradually damps down as the two oscillations gradually converge.
 
-The corresponding stochastic versions are plotted in Figure X(e), (f), (g) and (h). Results are similar in the sense that $F=0$ yields no convergence, while $F = 0.01, 0.02, 0.08$ each yield successful synchronization of the two circadian oscillation, with consecutively faster and faster rate of convergence. Comparing (b) and (f), and (c) and (g), we suspect that perhaps in the stochastic model, the shorter amount of time, as the inherent noise in the stochastic system may actually help the synchronization. Nevertheless, due to its stochastic nature, we cannot prove this conjecture without further research.
+
+It is natural to expect that, if faster flow is allowed, the convergence would also be faster. Results from modeling with $F = 0.02$ and $F=0.08$ are plotted in Figure 6(c) and (d), and they confirm our expectation. When $F$ is set to be $0.02,$ after about 500 hours of synchronization, the phase difference becomes indiscernible. When $F$ is set to be $0.08,$ we can see that the synchronization becomes much faster. It only takes about 100 hours for the two cells to synchronize their oscillations. Also notice that the magnitude of the flow of proteins during synchronization is much larger than that in previous cases.
+
+The corresponding stochastic versions are plotted in Figure 6(e), (f), (g) and (h). Results are similar in the sense that $F=0$ yields no convergence, while $F = 0.01, 0.02, 0.08$ each yield successful synchronization of the two circadian oscillation, with consecutively faster and faster rate of convergence. Comparing (b) and (f), and (c) and (g), we suspect that perhaps in the stochastic model, the shorter amount of time, as the inherent noise in the stochastic system may actually help the synchronization. Nevertheless, due to its stochastic nature, we cannot prove this conjecture without further research.
 
 In the case where two cells have identical structure, but only phase difference, we conclude that the synchronization is easy. With some protein flow, the two systems can align themselves to a shared oscillation. This resembles the information exchange in cells in the same organ, as they tend to have almost the same structure, but their being born at different time generate the phase differences among them. The result is not surprising, but what is remarkable is that, some very slight amount of protein flow between the two cells (i.e. $F$ is very small) would be sufficient to allow the two cells to get synchronized.
 
@@ -530,7 +530,7 @@ In the case where two cells have identical structure, but only phase difference,
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{diff_periods_combine.png}
-		\caption*{\small Figure X.}
+		\caption*{\small Figure 7.}
 	\end{minipage}
 	\footnotesize
 	\emph{Graphs in the left column are plotted for the cases when the period of cell 2 is approximately 80\% of that of cell 1, and graphs in the right column are plotted for the cases when the period of cell 2 is approximately 95\% of that of cell 1. Graphs in the same row are plotted for cases with the same value of $F$. The first and second plot in each graph are the number of proteins in cytoplasm and mRNAs in nucleus. The third plot is the flow of protein. All are deterministic versions.}
@@ -543,7 +543,7 @@ In the case where two cells have identical structure, but only phase difference,
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.99\textwidth]{sto_two_80_100_compare.png}
-		\caption*{\small Figure X.}
+		\caption*{\small Figure 8.}
 	\end{minipage}
 	\footnotesize
 	\emph{Graphs are plotted for the stochastic version, with different values of $F.$ Cell 2 has a period of approximately 80\% of that of cell 1. The first and second plot in each graph are the number of proteins in cytoplasm and mRNAs in nucleus. The third plot is the flow of protein.}
@@ -551,197 +551,375 @@ In the case where two cells have identical structure, but only phase difference,
 
 \textbf{Case 1:} The period of cell 2 is roughly 80\% of that of cell 1.
 
-The results from the deterministic version of the model is shown in Figure X(a), (b) and (c). Observe that when $F$ is small ($F=0.01,$ Figure X(a)), the two oscillations do not converge. Since the flow of protein, $p_c,$ shows some repeated patterns, we are assured that sufficient amount of reaction time is given, as the system has become steady. One interesting result is when $F$ is set to $0.1,$ as is shown in Figure X(b). In this situation, with the introduction of protein flow, the oscillations in both cells get killed, and it seems that the joint system has reached a steady state. However, detailed equilibrium analysis is needed to fully understand this situation. When $F$ is large ($F = 1$ in Figure X(c)), we can see that the two different periods are converging. Although the two paths are not perfectly aligned, they are indeed matched. The corresponding stochastic versions are plotted in Figure X(a), (b) and (c). Results are similar, as when $F$ is small, hardly can we see any convergence. If $F$ is large enough, it is obvious that synchronization is successful. Here notice that Figure X(b) and Figure X(b) have identical parameters, with F being $0.1.$ But the results are vastly different: in the stochastic model, the oscillations are not killed, but instead some medium level of synchronization can be observed.
+The results from the deterministic version of the model is shown in Figure 7(a), (b) and (c). Observe that when $F$ is small ($F=0.01,$ Figure 7(a)), the two oscillations do not converge. Since the flow of protein, $p_c,$ shows some repeated patterns, we are assured that sufficient amount of reaction time is given, as the system has become steady. One interesting result is when $F$ is set to $0.1,$ as is shown in Figure 8(b). In this situation, with the introduction of protein flow, the oscillations in both cells get killed, and it seems that the joint system has reached a steady state. However, detailed equilibrium analysis is needed to fully understand this situation. When $F$ is large ($F = 1$ in Figure 7(c)), we can see that the two different periods are converging. Although the two paths are not perfectly aligned, they are indeed matched. The corresponding stochastic versions are plotted in Figure 8(a), (b) and (c). Results are similar, as when $F$ is small, hardly can we see any convergence. If $F$ is large enough, it is obvious that synchronization is successful. Here notice that Figure 8(b) and Figure 8(b) have identical parameters, with $F$ being $0.1.$ But the results are vastly different: in the stochastic model, the oscillations are not killed, but instead some medium level of synchronization can be observed.
 
 
 
 \textbf{Case 2:} The period of cell 2 is roughly 95\% of that of cell 1.
 
-We expect that, if the innate difference between the two cells are small, then it should be easier to synchronize the two cells. Numerical results, as shown in Figure X(d), (e) and (f), confirm our expectation. Observe that in this case, $F=0.1$ would be large enough to generate a successful synchronization, while when $F=1,$ the synchronization is even faster.
+We expect that, if the innate difference between the two cells are small, then it should be easier to synchronize the two cells. Numerical results, as shown in Figure 7(d), (e) and (f), confirm our expectation. Observe that in this case, $F=0.1$ would be large enough to generate a successful synchronization, while when $F=1,$ the synchronization is even faster.
 
-Remark: If we compare the synchronization of identical cells with different initial states, with the synchronization of cells with innately different rhythms, we would see that the latter requires much faster flow of protein. In fact, $F$ needs to be at least 10 times larger, in order for cells with slightly different rhythms to get synchronized. This is intuitively clear, as synchronization of identical cells only requires the phases to be shifted, while synchronization of cells with different rhythms requires the flow of protein to fight against the original oscillation and transform the original rhythm.
+Remark: If we compare the synchronization of identical cells with different initial states, with the synchronization of cells with innately different rhythms, we would see that the latter requires much stronger strength of synchronization. In fact, $F$ needs to be at least 10 times larger, in order for cells with slightly different rhythms to get synchronized. This is intuitively clear, as synchronization of identical cells only requires the phases to be shifted, while synchronization of cells with different rhythms requires the flow of protein to fight against the original oscillation and transform the original rhythm.
 
 
-\subsection{Two cellular oscillators with direct diffusion (ECF)}
+\subsection{Multi-cellular oscillators with direct diffusion (ECF)}
+\hspace{5mm} Now, we present some results of Direct Diffusion Model with Extra-Cellular Fluid as transportation media. We exhibit some possible scenarios to show how this transportation model could effect this multi-cellular system. \\
+
+In all the experiments shown below, we keep the diffusion channel closed until t = 1.5. With this setting, we could see the transition phase of this system. \\
+
+Therefore, if we categorize those scenarios by the change of stability before and after opening the channel, we could discuss the results in mainly four scenarios: \textit{Unstable to Unstable}, \textit{Unstable to Stable}, \textit{Stable to Unstable}, and \textit{Stable to Stable}. However, we failed to find a set of parameter choices such that it gives us a \textit{Stable to Unstable} transition scenario, and the existence of such a  transition still appears to be an open question to us. In light of this, we limit the discussion to some results from the other three categories. \\
+
+\begin{center}
+\begin{tabular}{ |p{4cm}||p{3.5cm}|p{3.5cm}|p{3.8cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Parameter Choices in Three Scenarios} \\
+ \hline
+ Parameters and Initial Value for Variables& Unstable to Stable& Stable to Stable& Unstable to Unstable\\
+ \hline
+ $\alpha^{(1)}, \alpha^{(2)}$& 0.04 & 0.04 & 0.04\\
+ $\beta^{(1)}, \beta^{(2)}$& 0.04 & 0.04 & 0.04\\
+ $r^{(1)}, r^{(2)}$& 10 & 4 & 10\\
+ $K^{(1)}, K^{(2)}$& 200 & 200 & 200\\
+ $\lambda^{(1)}$& ${1.2\pi}/{220}$ & ${1.2\pi}/{220}$  & ${1.2\pi}/{220}$ \\
+ $\lambda^{(2)}$& ${0.8\pi}/{110}$ & ${0.8\pi}/{110}$  & ${0.8\pi}/{110}$ \\
+ $\lambda_{ECF}$& 0.02 & 0.4 & 0.46 \\
+ $V_n^{(1)}, V_n^{(2)}$& 1e-5 & 1e-5& 1e-5\\
+ $V_c^{(1)}, V_c^{(2)}$& 5e-5 & 5e-5& 5e-5\\
+ $V_{ECF}$& 1e-4 & 1e-4& 1e-4\\
+ $M_n^{(1)}, M_n^{(2)}$& 10.9 & 10.9 & 10.9\\
+ $M_c^{(1)}, M_c^{(2)}$& 1.88 & 1.88 & 1.88\\
+ $P_c^{(1)}, P_c^{(2)}$& 129.21 & 129.21 & 129.21\\
+ $P_n^{(1)}, P_n^{(2)}$& 3531.75 & 3531.75 & 3531.75\\
+ $P_{ECF}$& 18 & 18 & 18\\
+ \hline
+
+\end{tabular}
+\end{center}
+
+\vspace{5mm}
+
+\textbf{\textit{Note:}} the parameter choices and initial conditions for variables in this system are used for corresponding experiments with two cells illustrated below. For the experiments with more cells discussed below (e.g. for 4 cells and 10 cells), we omit the parameter choices here.
+
 
 \subsubsection{Unstable to Stable}
+\hspace{5mm} We first do experiments on two cells with parameter choices listed above. As illustrated by Figure 3.3.1.1, it turns out to be that the system is originally unstable (i.e. oscillating) around the steady state before opening the channel for exchanging protein molecules. However, after opening the channel by changing $\lambda_{ECF} = 0.02$ at $t = 1.5$, this dynamical system converges to a steady state rapidly quickly. However, converging to a steady state does not imply that the values of corresponding variables in different cells should be equal at the steady state, i.e. it is not true in general that $P_c^{(1)0} = P_c^{(2)0}$, $M_n^{(1)0} = M_n^{(2)0}$, and etc. Therefore, there exits a flux from one cell to another, which indicates the existence of an energy source sitting in the system. \\
 
-\subsubsection{Stable to Stable}
+Figure 3.3.1.2 illustrates two sets of eigenvalues on the complex plane: points in the left graph corresponds to eigenvalues of this two-cell system (linearized around the steady state) with $\lambda_{ECF} = 0.00$, while the graph on the right shows the eigenvalues of the same system except $\lambda_{ECF} = 0.02$. In other word, the eigenvalues shown below is the eigenvalues of the matrix A in section 2.3.2 with $\lambda_{ECF} = 0.00$ (on the left) or $\lambda_{ECF} = 0.02$ (on the right). \\
 
-\subsubsection{Unstable to Unstable}
+We could see by comparing Figure 3.3.1.1 and Figure 3.3.1.2 that: \\
+\begin{itemize}
+    \item When $\lambda_{ECF} = 0.00$, there are four eigenvalues with positive real part. This could explain the oscillating phenomenon before opening the channel.
+    \item when $\lambda_{ECF} = 0.02$, there does not exist any eigenvalues with positive real part, which could explain the converging and stabilizing phenomenon after opening the channel.
+\end{itemize}
 
-\subsubsection{Set of Eigenvalues with changing $\lambda_{ECF}$}
+\newpage
 
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{US.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.9\textwidth]{US.jpg}
+		\caption*{\small Figure 3.3.1.1}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{USEi.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.9\textwidth]{USEi.jpg}
+		\caption*{\small Figure 3.3.1.2}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\newpage
+
+We could see this \textit{Unstable to Stable} phenomenon more clearly by making the dynamical system larger in term of the number of cells. As illustrated below, Figure 3.3.1.3 shows that, with a 4-cell system, each cell converges to different concentrations after opening the channel in a short period of time, thus achieving a stable steady state of the system. Since the corresponding matrix is relatively large (a 17 * 17 matrix here), we omit the eigenvalue analysis. \\
+
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{US_M.jpg}
-		\caption*{\small Figure}
+		\caption*{\small Figure 3.3.1.3}
 	\end{minipage}
 \end{figure}
 
+\subsubsection{Stable to Stable}
+\hspace{5mm} Then, we move to another set of parameter choices (given in the middle column of parameter table above) such that it results in a \textit{Stable to Stable} phenomenon. In other word, before opening the channel at $t = 1.5$, the system is at a stable steady state (no oscillating phenomenon), and after opening the channel by setting $\lambda_{ECF} = 0.40$ the system converges to a different stable steady state. \\
 
-\begin{figure}[ht]
+An interesting phenomenon to notice is although $P_{c}^{(1)}$ does not equals to $P_{c}^{(2)}$ eventually at the stable steady state, but the difference between them are getting smaller than the difference before opening the channel. However, the difference between $M_{n}^{(1)}$ and $M_{n}^{(2)}$ expanses after opening the channel. Intuitively, an explanation of this could be that this system only allows exchanging of protein between cells and extra-cellular fluid rather than mRNA, thus the concentration of protein on either sides of cell membrane is trying to balance each other. \\
+
+Besides, by comparing Figure 3.3.2.1 and Figure 3.3.2.2, we could verify that the real parts of the eigenvalues indicates the stability of this system: \\
+\begin{itemize}
+    \item When $\lambda_{ECF} = 0.00$, there does not exist eigenvalues with positive real part. This could explain the stablizing phenomenon before opening the channel.
+    \item when $\lambda_{ECF} = 0.40$, there also does not exist any eigenvalues with positive real part, which could explain the converging and stabilizing phenomenon after opening the channel.
+\end{itemize}
+
+\newpage
+
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{SS.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.9\textwidth]{SS.jpg}
+		\caption*{\small Figure 3.3.2.1}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{SSEi.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.9\textwidth]{SSEi.jpg}
+		\caption*{\small Figure 3.3.2.2}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\newpage
+
+Again, we look at the case where more cells are involved in the system. Figure 3.3.2.3 illustrates a \textit{Stable to Stable} phenomenon with a 4-cell dynamical system. To simplify the analysis, we also omit the eigenvalue analysis for this larger system. However, we could see clearly from the graph that, after open the channel, the system converges to a different steady state. Moreover, $P_{c}^{(i)}$ are trying to converge together (although not equal to each other eventually), while the difference among $M_{n}^{(i)}$ goes larger. \\
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{SS_M.jpg}
-		\caption*{\small Figure}
+		\caption*{\small Figure 3.3.2.3}
 	\end{minipage}
 \end{figure}
 
 
-\begin{figure}[ht]
+\subsubsection{Unstable to Unstable}
+\hspace{5mm} With another different set of parameter choices (given in the parameter table above), some even more interesting phenomenon appears. \\
+
+Figure 3.3.3.1 shows a transition phase from an unstable (oscillating) system to another unstable (oscillating) system, however, with a synchronization phenomenon. In Figure 3.3.3.1, we open the exchanging channel at $t = 1.5$ by setting $\lambda_{ECF} = 0.46$. After this change of parameter, the dynamical system goes to its new unstable steady state, while the oscillating periods of the two cells converge to the same value rapidly quickly. \\
+
+Figure 3.3.3.2 are the positions of eigenvalues on the complex plane of matrix A in section 2.3.2 with $\lambda_{ECF} = 0.00$ and $\lambda_{ECF} = 0.46$. These two graph verifies again our intuition from Figure 3.3.3.1: \\
+\begin{itemize}
+    \item When $\lambda_{ECF} = 0.00$, there exist 4 eigenvalues with positive real part. This could explain the oscillating phenomenon before opening the channel. Moreover, we could pair those four eigenvalues into two symmetric pairs with respect the real axis. This gives us two oscillating periods corresponding to the different periods in cell 1 and cell 2 before starting communicating between cells.
+    \item when $\lambda_{ECF} = 0.46$, there only exist 2 eigenvalues with positive real part, which could explain the converging phenomenon in terms of the period.
+\end{itemize}
+
+\newpage
+
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{UU.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.9\textwidth]{UU.jpg}
+		\caption*{\small Figure 3.3.3.1}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{UUEi.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.9\textwidth]{UUEi.jpg}
+		\caption*{\small Figure 3.3.3.2}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\newpage
+
+To illustrate this synchronizing phenomenon more clearly, we do more experiments on 4-cell oscillating system and 10-cell oscillating system as shown below by Figure 3.3.3.3 and Figure 3.3.3.4.
+
+\vspace{10mm}
+
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{UU_M.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=\textwidth]{UU_M.jpg}
+		\caption*{\small Figure 3.3.3.3}
 	\end{minipage}
-\end{figure}
-
-\begin{figure}[ht]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{UU_10.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=\textwidth]{UU_10.jpg}
+		\caption*{\small Figure 3.3.3.4}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\newpage
+
+\subsubsection{Set of Eigenvalues with changing $\lambda_{ECF}$}
+
+\hspace{5mm} We have observed that the eigenvalue analysis implies the stability around a steady state and indicates some information about synchronization phenomenon. Therefore, it motivates us to look more carefully about how the set of eigenvalues behaves on the complex plane when changing $\lambda_{ECF}$. We do two sets of experiments with different parameter choices. For each set of experiments, we iterate through $\lambda_{ECF} = 0:0.001:10$ by a for-loop and for each $\lambda_{ECF}$ we compute the eigenvalue with largest real part of matrix A (see section 2.3.2). Then we mark this eigenvalue on the complex plane while connect all those eigenvalues in order to show how it changes with $\lambda_{ECF}$. We list all the parameters and initial values for the two set of experiments: \\
+
+\begin{center}
+\begin{tabular}{ |p{4cm}||p{3.5cm}|p{3.5cm}|  }
+
+ \hline
+ \multicolumn{3}{|c|}{Parameter Choices in Two Experiments} \\
+ \hline
+ Parameters and Initial Value for Variables& Experiment 1& Experiment 2\\
+ \hline
+ number of cells n& 2 & 2\\
+ $\alpha^{(1)}, \alpha^{(2)}$& 0.04 & 0.04\\
+ $\beta^{(1)}, \beta^{(2)}$& 0.04 & 0.04\\
+ $r^{(1)}, r^{(2)}$& 10 & 4\\
+ $K^{(1)}, K^{(2)}$& 200 & 200\\
+ $\lambda^{(1)}$& ${1.2\pi}/{220}$ & ${1.2\pi}/{220}$\\
+ $\lambda^{(2)}$& ${0.8\pi}/{110}$ & ${0.8\pi}/{110}$\\
+ $\lambda_{ECF}$& 0:0.001:10 & 0:0.001:10\\
+ $V_n^{(1)}, V_n^{(2)}$& 1e-5 & 1e-5\\
+ $V_c^{(1)}, V_c^{(2)}$& 5e-5 & 5e-5\\
+ $V_{ECF}$& 1e-4 & 1e-4\\
+ $M_n^{(1)}, M_n^{(2)}$& 10.9 & 10.9\\
+ $M_c^{(1)}, M_c^{(2)}$& 1.88 & 1.88\\
+ $P_c^{(1)}, P_c^{(2)}$& 129.21 & 129.21\\
+ $P_n^{(1)}, P_n^{(2)}$& 3531.75 & 3531.75\\
+ $P_{ECF}$& 18 & 18\\
+ \hline
+\end{tabular}
+\end{center}
+
+\vspace{5mm}
+
+The results of Experiment 1 are shown in Figure 3.3.4.1. When $\lambda_{ECF} = 0.00$, the eigenvalue with largest real part for this system corresponds to the most top right point in Figure 3.3.4.1 while the eigenvalue with largest real part for $\lambda_{ECF} = 10.00$ corresponds to the most bottom right point in Figure 3.3.4.1. When $\lambda_{ECF}$ changes from 0.00 to 10.00, the corresponding eigenvalue first passes the imaginary line and then passes back to the positive half of the plane. This indicates that the steady state of this system first changes from unstable to stable and then change back from stable to unstable.\\
+
+The results of Experiment 1 are shown in Figure 3.3.4.2. When $\lambda_{ECF} = 0.00$, the eigenvalue with largest real part for this system corresponds to the most bottom right point in Figure 3.3.4.2 while the eigenvalue with largest real part for $\lambda_{ECF} = 10.00$ corresponds to the most top right point in Figure 3.3.4.1. When $\lambda_{ECF}$ changes from 0.00 to 10.00, the corresponding eigenvalue the corresponding eigenvalue always sitting on the non-positive half of the plane. This indicates that the steady state of this system always states as a stable steady state.\\
+
+\newpage
+
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{all_lambda_Ei.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.95\textwidth]{all_lambda_Ei.jpg}
+		\caption*{\small Figure 3.3.4.1}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{all_lambda_Ei2.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.95\textwidth]{all_lambda_Ei2.jpg}
+		\caption*{\small Figure 3.3.4.2}
 	\end{minipage}
 \end{figure}
 
+\newpage
 
+\subsection{Positive Feedback Transposition with ECF}
 
-\begin{figure}[ht]
+\hspace{5mm} As previous section, we first list all the parameters and initial states chosen for our experiments. We did experiments over 2-cell, 4-cell, and 10-cell systems under two general scenarios: \textit{Unstable to Stable} and \textit{Unstable to Unstable}. \\
+
+\begin{center}
+\begin{tabular}{ |p{4cm}||p{3.5cm}|p{3.5cm}|  }
+ \hline
+ \multicolumn{3}{|c|}{Parameter Choices in Two Experiments} \\
+ \hline
+ Parameters and Initial Value for Variables& Unstable to Stable& Unstable to Unstable\\
+ \hline
+ number of cells n& 2 & 2\\
+ $\alpha^{(1)}, \alpha^{(2)}$& 0.04 & 0.04\\
+ $\beta^{(1)}, \beta^{(2)}$& 0.04 & 0.04\\
+ $r^{(1)}, r^{(2)}$& 10 & 4\\
+ $K^{(1)}, K^{(2)}$& 200 & 200\\
+ $K_{ex}^{(1)}, K_{ex}^{(2)}$& 200 & 200\\
+ $K_{im}^{(1)}, K_{im}^{(2)}$& 60 & 60\\
+ $\lambda^{(1)}$& ${1.2\pi}/{220}$ & ${1.2\pi}/{220}$\\
+ $\lambda^{(2)}$& ${0.8\pi}/{110}$ & ${0.8\pi}/{110}$\\
+ $r_{ex}^{(1)}, r_{ex}^{(2)}$& 7 & 8\\
+ $r_{im}^{(1)}, r_{im}^{(2)}$& 7 & 8\\
+ $\alpha_{ex}^{(1)}, \alpha_{ex}^{(2)}$& 1 & 1\\
+ $\alpha_{im}^{(1)}, \alpha_{im}^{(2)}$& 2 & 2\\
+ $V_n^{(1)}, V_n^{(2)}$& 1e-5 & 1e-5\\
+ $V_c^{(1)}, V_c^{(2)}$& 5e-5 & 5e-5\\
+ $V_{ECF}$& 1e-4 & 1e-4\\
+ $M_n^{(1)}, M_n^{(2)}$& 10.9 & 10.9\\
+ $M_c^{(1)}, M_c^{(2)}$& 1.88 & 1.88\\
+ $P_c^{(1)}, P_c^{(2)}$& 129.21 & 129.21\\
+ $P_n^{(1)}, P_n^{(2)}$& 3531.75 & 3531.75\\
+ $P_{ECF}$& 18 & 18\\
+ \hline
+\end{tabular}
+\end{center}
+
+\vspace{5mm}
+
+\textbf{\textit{Note:}} the parameter choices and initial conditions for variables in this system are used for all experiments with two cells illustrated below. For experiments with more cells discussed below (e.g. for 4 cells and 10 cells), we omit the parameter choices here.
+
+\subsubsection{Unstable to Stable}
+
+\hspace{5mm} We could see from Figure 3.4.1.1 that after opening the channel at $t = 1.5$, the unstable system converges to a stable steady state rapidly quickly. We could also see that although $P_c^{(1)}$ and $P_c^{(2)}$ end up close to each other, they are not exactly the same. The same things happens to $M_n^{(1)}$ and $M_n^{(2)}$. \\
+
+\newpage
+
+\begin{figure}[h!]
     \centering
 	\begin{minipage}{0.99\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{PF_US.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.95\textwidth]{PF_US.jpg}
+		\caption*{\small Figure 3.4.1.1}
 	\end{minipage}
 \end{figure}
 
+\subsubsection{Unstable to Unstable}
 
-\begin{figure}[ht]
+\hspace{5mm} Finally, we introduce another interesting case -- an oscillating system (unstable) been changed to another oscillating system (unstable) around a different steady state after opening the coupling channel equipped with the positive feedback mechanism. \\
+
+As we could see from Figure 3.4.2.1, before opening the channel ($t < 1.5$), two cells are oscillating with different length of period. After opening the channel ($t > 1.5$), these two cells sitting in the new system try to synchronize their periods, however, they failed to converge to a synchronized period. Moreover, it seems to us that, in general, the synchronization phenomenon tends to disappear with the Positive Feedback Model. Intuitively we suppose the reason for that could be the transportation rate of positive feedback model can not be entirely determined by the difference of protein concentration on either side of the cell membrane, which might implies that the concentration on either side of the membrane is less balanced. \\
+
+In Figure 3.4.2.2 and Figure 3.4.2.3 we ran experiments over some larger systems in term of the number of cells. Figure 3.4.2.2 corresponds to the results from a 4-cell system, while Figure 3.4.2.3 corresponds to a 10-cell system. Comparing to the 4-cell and 10-cell system with Direct Diffusion Model with ECF illustrated in the last section, we could see more clearly that the synchronization phenomenon disappears.
+
+% \newpage
+
+
+\begin{figure}[!]
     \centering
-	\begin{minipage}{0.99\textwidth}
+	\begin{minipage}{0.9\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{PF_UU.jpg}
-		\caption*{\small Figure}
+		\includegraphics[width=0.9\textwidth]{PF_UU.jpg}
+		\caption*{\small Figure 3.4.2.1}
+	\end{minipage}
+	\begin{minipage}{0.9\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{PF_UU_4.jpg}
+		\caption*{\small Figure 3.4.2.2}
+	\end{minipage}
+	\begin{minipage}{0.9\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{PF_UU_10.jpg}
+		\caption*{\small Figure 3.4.2.3}
 	\end{minipage}
 \end{figure}
 
+\newpage
 
-\begin{figure}[ht]
-    \centering
-	\begin{minipage}{0.99\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{PF_UU_4.jpg}
-		\caption*{\small Figure}
-	\end{minipage}
-\end{figure}
+\section{Future studies}
+\hspace{5mm} In this section we discuss some further thinking, questions, and interests inspired by the project. As listed below, we plan to:
 
+\begin{itemize}
+    \item show or disprove the existence and uniqueness of the steady state in the various models. We have discussed it in the simplest case which is for a single cell, and, in this case, there exists a unique steady state.
+    \item in the Direct Diffusion Model with ECF, explore choices of ($\lambda_{ECF}$, r), ($\lambda_{ECF}$, $\lambda$), or ($V_{ECF}$, $\lambda_{ECF}$) pairs in some reasonable range, such that we could analyze the eigenvalue with the largest real part as functions of corresponding two variables.
+    \item in the Direct Diffusion Model with ECF, find a set of parameters that gives \textit{Stable to Unstable} phenomenon or show the non-existence of such a phenomenon, which could complete the story of four possible scenarios in this case. And, for the Positive Feedback Model, it is also very desirable to complete all the possible scenarios.
+    \item develop a method to do analytic stability analysis on the PFT model around the steady state by calculating the eigenvalues (especially for a 2-cell system). Thus, we could verify all the empirical graphs by comparing them to the eigenvalues.
+    \item explore some oscillating coupling rate with respect to time, which are desirable to model a system with oscillating natural. In this setting, we could study the synchronization phenomenon and various stability analysis.
+    \item build the corresponding stochastic model for other cases that we have studied and we plan to study. Compare and contrast the behaviour of the stochastic version with that of the deterministic version.
+\end{itemize}
 
-\begin{figure}[ht]
-    \centering
-	\begin{minipage}{0.99\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{PF_UU_10.jpg}
-		\caption*{\small Figure}
-	\end{minipage}
-\end{figure}
+\section{Acknowledgement}
+\hspace{5mm} The authors would like to appreciate the tremendous help from Professor Charles Peskin and Dr. Charles Puelz. Peskin introduced the idea to us, and provided essential guidance. Puelz also gave us constructive comments.
 
+The project is available at \url{https://github.com/zeshunzong/Synchronization_of_Two_Cellular_Circadian_Rhythms}. Suggestions are welcomed.
 
-
-\begin{comment}
 
 \begin{thebibliography}{9}
+
+
+	\bibitem{rbm}
+	Guanyu Wang and Charles S. Peskin. (2018).
+	Entrainment of a cellular circadian oscillator by light in the presence of molecular noise.
 
 	\bibitem{gyrocom}
 	Charles S. Peskin. (2018).
 	Notes on Physiological Control Mechanism.
 
-	\bibitem{rbm}
-	Charles Puelz. (2018).
-	Matlab code about rigid body motion.
-
-
-
 
 \end{thebibliography}
-\end{comment}
-
 
 \end{document}
